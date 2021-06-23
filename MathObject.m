@@ -4,43 +4,80 @@
 (* :Context: MathObject` *)
 (* :Summary: Object oriented programming infrastructure *)
 (* :Author: Mark A. Caprio, Department of Physics, University of Notre Dame *)
-(* :Copyright: Copyright 2011, Mark A. Caprio *)
-(* :Package Version: 1.0 *)
-(* :Mathematica Version: 8.0 *)
+(* :Copyright: Copyright 2011-2021, Mark A. Caprio *)
+(* :Package Version: 1.0.1 *)
+(* :Mathematica Version: 12.1 *)
 (* :History:
-  May 2011. Initiated.
+  May 2011. Initiated.  [Version 1.0]
+  June 23, 2021. Rename ObjectExistsQ to MathObjectExistsQ, as minimal patch to API
+    to avoid conflict with new System`ObjectExistsQ (Mathematica 12.1). [Version 1.0.1]
  *)
 
-(* :Discussion: To use the package, the contexts "MathObject`",
-"MathObject`Methods`", and "MathObject`InstanceData`" should all be in the
-$ContextPath.
+(* :Discussion:
 
-For interactive use: It always suffices to evaluate Get["MathObject`"], though
-this will cause the package to be reloaded unnecessarily if already loaded.  It
-normally suffices to evaluate Needs["MathObject`"], but this will fail to add
-the subcontexts to the $ContextPath if the package has already been loaded, say,
-privately to another package.  The completely proper way to load the package is
-through
-
-	Needs["MathObject`"];Needs[""MathObject`Methods`"];Needs["MathObject`InstanceData`"];
-
-For internal use by a package: These Needs calls should be evaluated after
-BeginPackage.
-
-For both internal use by a package *and* for subsequent external use outside the
-package: It is necessary to evaluate
-
-BeginPackage["...",{MathObject`","MathObject`Methods`","MathObject`InstanceData`",...}]
-
-Major limitation: Method names are in globally accessible namespace and
-therefore can easily be hidden, e.g., by a local symbol of the same name within
-a Module.  For example:
-
-Module[
-{x},
-x=27;
-Object@x[]; (* FAILS *)
-];
+  To use the package, the contexts "MathObject`", "MathObject`Methods`", and
+  "MathObject`InstanceData`" should all be in the $ContextPath.
+  
+  For interactive use: It always suffices to evaluate Get["MathObject`"], though
+  this will cause the package to be reloaded unnecessarily if already loaded.  It
+  normally suffices to evaluate Needs["MathObject`"], but this will fail to add
+  the subcontexts to the $ContextPath if the package has already been loaded, say,
+  privately to another package.  The completely proper way to load the package is
+  through
+  
+  	Needs["MathObject`"];
+        Needs[""MathObject`Methods`"];
+        Needs["MathObject`InstanceData`"];
+  
+  For internal use by a package: These Needs calls should be evaluated after
+  BeginPackage.
+  
+  For both internal use by a package *and* for subsequent external use outside the
+  package: It is necessary to evaluate
+  
+  BeginPackage["...",{MathObject`","MathObject`Methods`","MathObject`InstanceData`",...}]
+  
+  Major limitation: Method names are in globally accessible namespace and
+  therefore can easily be hidden, e.g., by a local symbol of the same name within
+  a Module.  For example:
+  
+    Module[
+      {x},
+      x=27;
+      Object@x[]; (* FAILS *)
+    ];
+  
+  Future reimplementation: With the introduction of a dictionary-like data type
+  (Association) in Mathematica 10.0, it might be more robust and/or efficient to
+  reimplement this object oriented programming framework in terms of
+  associations, both to hold the global object space (and, in fact, allow
+  multiple independent object spaces) and to store the members for each object
+  instance, as in the Pythonic implementation of objects.
+  
+  API history:
+  
+  Mathematica 12.1 introduced a new symbol ObjectExistsQ in the System context,
+  which overloaded the corresponding symbol in the MathObject V1.0 API.
+  MathObject Version X.X thus introduces an overhauled API, with the general
+  principle that "Object" becomes "MathObject", and "Class" becomes "MathClass".
+  Here is an explicit mapping:
+  
+    Object => MathObject
+    DeclareClass => DeclareMathClass
+    Destroy => DestroyMathObject
+    SetObjectData => SetMathObjectData
+    ObjectExistsQ => MathObjectExistsQ
+    ObjectClass => MathObjectClass
+    ObjectName => MathObjectName
+    ShowObject => ShowMathObject
+    ClassAncestry => MathClassAncestry
+    ClassPattern => MathClassPattern
+    ObjectPattern => MathObjectPattern
+    ObjectNamePattern => MathObjectNamePattern
+    ScopeObjects => ScopeMathObjects
+    ClearObjects => ClearMathObjects
+    ConstructorWrapper => MathClassConstructorWrapper (make private)
+  
  *)
 
 (*Begin package*)
@@ -59,7 +96,7 @@ Object::usage="Object[name] signifies an object of the given name.";
 DeclareClass::usage="DeclareClass[class,[parent,]{data1,data2,...},{method1,method2,...}] declares a class of objects, with given members.";
 Destroy::usage="Destroy[object] destroys object.  Destruction is carried out by executing a generic destruction function, which in turn invokes the user-defined destructor as one step in the process.";
 SetObjectData::usage="SetObjectData[o2,o1] populates all data fields in o2 with the values assigned for o1.  The object o1 must be of the same class as o2 or a daughter class, so insure that all these fields are present.";
-ObjectExistsQ::usage="ObjectExistsQ[object] returns True if object is defined, i.e., has been created and not subsequently destroyed.";
+MathObjectExistsQ::usage="MathObjectExistsQ[object] returns True if object is defined, i.e., has been created and not subsequently destroyed.";
 ObjectClass::usage="ObjectClass[object] returns the class type of object.";
 ObjectName::usage="ObjectName[object] returns the name of object.  (This is an expression, not necessarily a string.)";
 ShowObject::usage="ShowObject[object] displays diagnostic information for object.";
@@ -152,7 +189,7 @@ places Class at too deep a level to be matched. *)
                       {
                         SetMethod=ToExpression[$ObjectMethodContext<>"Set"<>s],
                         GetMethod=ToExpression[$ObjectMethodContext<>"Get"<>s],
-                        MemberIdentifier=ToExpression[$ObjectInstanceContext<>ToString[Class]<>"$"<>s]
+                        MemberIdentifier=ToExpression[$ObjectMethodContext<>ToString[Class]<>"$"<>s]
                       },
 
                       SetMethod[Class,Self_Object][Value_]:=($ObjectInstanceIdentifier[Self][MemberIdentifier]=Value;Null);
@@ -203,9 +240,7 @@ places Class at too deep a level to be matched. *)
 General::objdupl="Cannot create object `1`[[`2`]], since an object named \"`2`\" already exists (as an instance of class `3`).";
 General::objsyntax="Missing or unexpected arguments in `1``2`[`3`].  (The given arguments do not match any of the definitions for the constructor for class `1`.)";
 
-
 UniqueObjectBaseName=$ObjectInstanceContext<>"Object$";
-
 
 ConstructorWrapper[Class_Symbol,AlmostSelf:Object[AlmostName_]][Args___]:=
   Module[
@@ -221,7 +256,7 @@ ConstructorWrapper[Class_Symbol,AlmostSelf:Object[AlmostName_]][Args___]:=
 
     (* check for duplicate creation *)
     If[
-      ObjectExistsQ[Self],
+      MathObjectExistsQ[Self],
       If[
         ClassAllowClobber[ObjectClass[Self]],
 
@@ -308,7 +343,7 @@ Destroy[Self:Object[A_]]:=
 
     (* check that object exists in order to be destroyed *)
     If[
-      !ObjectExistsQ[Self],
+      !MathObjectExistsQ[Self],
       (*Message[General::objdestroy,Self];*)
       Return[]
     ];
@@ -330,21 +365,16 @@ Destroy[Self:Object[A_]]:=
     Null
   ];
 
-
 (*General method access syntax*)
-
 
 Object/:HoldPattern[(Self:Object[A_])@((Method_Symbol)[Args___])]:=
   MethodWrapper[Self,Method,Args];
 
-
-        (*General method access wrapper*)
-
+(*General method access wrapper*)
 
 Object::objaccess="Cannot complete method call `2`@`3`[`4`] since object does not exist.";
 General::objmethod="Cannot complete method call `2`@`3`[`4`] since no method named `3` is defined for class `1`.";
 General::objmethodsyntax="Cannot complete method call `2`@`3`[`4`] since given arguments do not match any of the definitions for method `3`.";
-
 
 MethodWrapper[Self:Object[A_],Method_Symbol,Args___]:=
   Module[
@@ -352,7 +382,7 @@ MethodWrapper[Self:Object[A_],Method_Symbol,Args___]:=
 
     (* validate object *)
     If[
-      !ObjectExistsQ[Self],
+      !MathObjectExistsQ[Self],
       Message[Object::objaccess,None,Self,Method,ListToString[{Args}]];
       Return[$Failed]
     ];
@@ -385,15 +415,11 @@ MethodWrapper[Self:Object[A_],Method_Symbol,Args___]:=
     Result
   ];
 
-
 (*Object operators*)
-
 
 (*Memberwise assignment*)
 
-
 SetObjectData::ancestry="Source object `1` is not of the same class as `2` or of a descendent class thereof.";
-
 
 SetObjectData[o2_Object,o1_Object]:=
   Module[
@@ -420,122 +446,98 @@ SetObjectData[o2_Object,o1_Object]:=
     ];
   ];
 
-
 (*Object metadata functions*)
-
 
 (*Existence function*)
 
-
-ObjectExistsQ[Self:Object[A_]]:=(Head[$ObjectClass[Self]]=!=$ObjectClass);
-
+MathObjectExistsQ[Self:Object[A_]]:=(Head[$ObjectClass[Self]]=!=$ObjectClass);
 
 (*Object name extraction*)
 
-
 ObjectName[Self:Object[A_]]:=A;
-
 
 (*Object type retrieval function*)
 
-
 ObjectClass::noclass="Attempting to determine class of object `1` when this object does not exist.";
 
+ObjectClass[Self_Object]:=
+  Module[
+    {},
 
-ObjectClass[Self_Object]:=Module[
-  {},
+    (* check that object created *)
+    If[
+      !MathObjectExistsQ[Self],
+      Message[ObjectClass::noclass,Self];
+      Return[]
+    ];
 
-  (* check that object created *)
-  If[
-    !ObjectExistsQ[Self],
-    Message[ObjectClass::noclass,Self];
-    Return[]
+    (* retrieve class *)
+    $ObjectClass[Self]
   ];
-
-  (* retrieve class *)
-  $ObjectClass[Self]
-                                  ];
-
 
 (*Object data dump function*)
 
+ShowObject[Self_Object]:=
+  Module[
+    {},
 
-ShowObject[Self_Object]:=Module[
-  {},
+    Print["Object name: ",ObjectName[Self]];
+    If[
+      !MathObjectExistsQ[Self],
+      Print["Object not defined."];
+      Return[]
+    ];
 
-  Print["Object name: ",ObjectName[Self]];
-  If[
-    !ObjectExistsQ[Self],
-    Print["Object not defined."];
-    Return[]
+    Print["  ","Instance identifier: ",$ObjectInstanceIdentifier[Self]];
+    Print["  ","Class: ",ObjectClass[Self]];
+    (*Definition[Evaluate[$ObjectInstanceIdentifier[Self]]]*)
+    Print["  ",InputForm[Replace[
+      DownValues[Evaluate[$ObjectInstanceIdentifier[Self]]],
+      {x_:>(x[[1,1,1]]->x[[2]])},
+      {1}
+                         ]]]
   ];
-
-  Print["  ","Instance identifier: ",$ObjectInstanceIdentifier[Self]];
-  Print["  ","Class: ",ObjectClass[Self]];
-  (*Definition[Evaluate[$ObjectInstanceIdentifier[Self]]]*)
-  Print["  ",InputForm[Replace[
-    DownValues[Evaluate[$ObjectInstanceIdentifier[Self]]],
-    {x_:>(x[[1,1,1]]->x[[2]])},
-    {1}
-                       ]]]
-                         ];
-
 
 (*Class ancestry*)
 
-
 ClassAncestry::noclass="Ancestry requested for undefined class `1`.";
-
 
 ClassAncestry[Class_Symbol]/;MatchQ[ClassParent[Class],None]:={Class};
 ClassAncestry[Class_Symbol]/;MatchQ[ClassParent[Class],Except[None,_Symbol]]:=Append[ClassAncestry[ClassParent[Class]],Class];
 ClassAncestry[Class_Symbol]/;MatchQ[ClassParent[Class],Except[_Symbol]]:=(Message[ClassAncestry::noclass,Class];{});
 
-
 (*Note: Short-circuit && prevents attempt to retrieve ancestry of a symbol which does not represent a defined class name.*)
-
 
 ClassPattern[Class_Symbol]:=(_Symbol)?(MatchQ[ClassParent[#],_Symbol]&&MemberQ[ClassAncestry[#],Class]&);
 
-
 (*Object and object name matching patterns*)
 
+ObjectPattern[Class_Symbol]:=(_Object)?(MathObjectExistsQ[#]&&MemberQ[ClassAncestry[ObjectClass[#]],Class]&);
 
-ObjectPattern[Class_Symbol]:=(_Object)?(ObjectExistsQ[#]&&MemberQ[ClassAncestry[ObjectClass[#]],Class]&);
-
-
-ObjectNamePattern[Class_Symbol]:=_?(ObjectExistsQ[Object[#]]&&MemberQ[ClassAncestry[ObjectClass[Object[#]]],Class]&);
-
+ObjectNamePattern[Class_Symbol]:=_?(MathObjectExistsQ[Object[#]]&&MemberQ[ClassAncestry[ObjectClass[Object[#]]],Class]&);
 
 (*Note: An ostensible alternate pattern would use a named expression (s_Object) combined with Condition.  In this case, HoldPattern on RHS needed, or else the else conditios bleed over to the assignment, and any reference to ObjectPattern[a] remains unevaluated.  However, even so, this pattern is not suitable for use in argument lists (or Repeated lists and sequences) involving more than one appearance of the pattern, since the use of the same name s in both appearances means that the pattern will match only if all the objects are the *same* instance.*)
-
 
 (* ::Program::Initialization:: *)
 (*ObjectPattern[Class_Symbol] :=*)
 (*  HoldPattern[*)
-(*   ((s_Object) /; ObjectExistsQ[s]) /; MemberQ[ClassAncestry[ObjectClass[s]], Class]*)
+(*   ((s_Object) /; MathObjectExistsQ[s]) /; MemberQ[ClassAncestry[ObjectClass[s]], Class]*)
 (*   ];*)
 (*ObjectNamePattern[Class_Symbol]:=*)
 (*  HoldPattern[*)
-(*((n_)/;ObjectExistsQ[Object[n]])/;MemberQ[ClassAncestry[ObjectClass[Object[n]]],Class]*)
+(*((n_)/;MathObjectExistsQ[Object[n]])/;MemberQ[ClassAncestry[ObjectClass[Object[n]]],Class]*)
 (*];*)
-
 
 (*Scoping*)
 
-
 (*Scoping of object duration*)
-
 
 (*Any objects created within ScopeObjects will be destroyed upon exiting ScopeObjects. *)
 
-
 SetAttributes[ScopeObjects,HoldAll];
-
 
 ScopeObjects::numargs="ScopeObjects must be called with exactly one argument.";
 ScopeObjects[_,__]:=Message[ScopeObjects::numargs];
-
 
 (*
 ScopeObjects[Body_]:=Module[
@@ -570,7 +572,6 @@ If[Aborted,Abort[];$Aborted,EvaluatedBody]
 ];
  *)
 
-
 ScopeObjects[Body_]:=
   Module[
     {
@@ -595,14 +596,15 @@ ScopeObjects[Body_]:=
       ];
     ]
   ];
+ 
+(*Clearing*)
 
-
- (*Clearing*)
-
-
- ClearObjects[]:=
+ClearObjects[]:=
   Module[
     {},
+    Clear[$ObjectClass];
+    Clear[$ObjectInstanceIdentifier];
+    Clear[$ObjectReference];
     $ObjectRegistry={};
     Quiet[
       Remove["MathObject`InstanceData`*"],
@@ -610,12 +612,9 @@ ScopeObjects[Body_]:=
     ]
   ];
 
-
 (*End package*)
 
-
 (*Exit private context*)
-
 
 End[];
 
