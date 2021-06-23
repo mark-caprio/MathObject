@@ -1,5 +1,10 @@
 (* ::Package:: *)
 
+(* ::Section::Initialization:: *)
+(*Header comments*)
+
+
+(* ::Input::Initialization:: *)
 (* :Title: InstanceData *)
 (* :Context: MathObject`InstanceData` *)
 (* :Summary: Subcontext definition *)
@@ -9,6 +14,8 @@
 (* :Mathematica Version: 8.0 *)
 (* :History: See main package file. *)
 
+
+(* ::Section::Initialization:: *)
 (*Context for instance data storage*)
 
 
