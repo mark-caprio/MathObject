@@ -1,0 +1,4148 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[    145171,       4139]
+NotebookOptionsPosition[    127515,       3564]
+NotebookOutlinePosition[    128802,       3612]
+CellTagsIndexPosition[    128715,       3607]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+Tests -- OLD single bracket constructor syntax\
+\>", "Section",
+ CellChangeTimes->{{3.51491220396875*^9, 3.51491220471875*^9}, {
+   3.5149136160625*^9, 3.51491362428125*^9}, 3.514913681453125*^9, 
+   3.51508377853125*^9, {3.5180196925625*^9, 3.518019702515625*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Example", "Subsection",
+ CellChangeTimes->{{3.514904762578125*^9, 3.514904763625*^9}}],
+
+Cell["Definition", "Text",
+ CellChangeTimes->{{3.5149048876875*^9, 3.514904888953125*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"DeclareClass", "[", 
+  RowBox[{"MyPolygon", ",", 
+   RowBox[{"{", "\"\<n\>\"", "}"}], ",", 
+   RowBox[{"{", "\"\<f\>\"", "}"}]}], "]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Constructor", "[", 
+    RowBox[{"MyPolygon", ",", "Self_"}], "]"}], "[", "n_Integer", "]"}], ":=", 
+  RowBox[{"Module", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"Self", "@", 
+     RowBox[{"Setn", "[", "n", "]"}]}]}], "\[IndentingNewLine]", 
+   "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", 
+    RowBox[{"MyPolygon", ",", "Self_"}], "]"}], "[", "]"}], ":=", 
+  RowBox[{"Module", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"Self", "@", 
+       RowBox[{"Getn", "[", "]"}]}], ")"}], "^", "2"}]}], 
+   "\[IndentingNewLine]", "]"}]}]}], "Input",
+ CellChangeTimes->{{3.514902148578125*^9, 3.51490215421875*^9}, {
+   3.51490219146875*^9, 3.51490219425*^9}, {3.5149034039375*^9, 
+   3.514903416640625*^9}, {3.5150838336875*^9, 3.51508384159375*^9}, {
+   3.515161649296875*^9, 3.51516165003125*^9}, 3.515163581375*^9}],
+
+Cell["Instance", "Text",
+ CellChangeTimes->{{3.514904892171875*^9, 3.514904893140625*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"MyPolygon", "[", "a", "]"}], "[", "4", "]"}]], "Input",
+ CellChangeTimes->{{3.51490220240625*^9, 3.51490221371875*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Object", "[", "a", "]"}]], "Output",
+ CellChangeTimes->{{3.51490220696875*^9, 3.5149022140625*^9}, {
+   3.514902422875*^9, 3.51490245828125*^9}, 3.514903148296875*^9, 
+   3.514903570109375*^9, 3.514903642328125*^9, {3.51490372234375*^9, 
+   3.514903744015625*^9}, {3.514903827421875*^9, 3.51490384165625*^9}, 
+   3.514903958546875*^9, 3.514904223609375*^9, 3.514904572328125*^9, 
+   3.514904895796875*^9, 3.5149064696875*^9, 3.514906581203125*^9, {
+   3.514906691640625*^9, 3.514906693359375*^9}, {3.51490685759375*^9, 
+   3.514906886953125*^9}, 3.51490887253125*^9, 3.514908960234375*^9, 
+   3.514909206390625*^9, 3.51490932559375*^9, {3.514909693671875*^9, 
+   3.514909709078125*^9}, 3.514909913109375*^9, 3.514909948625*^9, 
+   3.51491025675*^9, {3.514910287234375*^9, 3.514910303296875*^9}, {
+   3.514910344640625*^9, 3.51491036178125*^9}, 3.514913713234375*^9, 
+   3.51508386365625*^9, {3.51508391171875*^9, 3.515083919484375*^9}, 
+   3.515084272015625*^9, 3.515095464140625*^9, 3.51509565840625*^9, 
+   3.51509596540625*^9, 3.51509606203125*^9, 3.5150962186875*^9, 
+   3.51509671975*^9, 3.51509717853125*^9, 3.5150972246875*^9, 
+   3.5150974381875*^9, 3.51509748796875*^9, {3.515097536171875*^9, 
+   3.515097544484375*^9}, 3.515097603234375*^9, 3.51516142878125*^9, {
+   3.51516163575*^9, 3.51516165409375*^9}, 3.51516332065625*^9, 
+   3.51516349728125*^9, 3.5151635839375*^9, 3.515175153140625*^9, 
+   3.515175297234375*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Object", "[", "a", "]"}], "@", 
+  RowBox[{"Getn", "[", "]"}]}]], "Input",
+ CellChangeTimes->{{3.51490474896875*^9, 3.514904752109375*^9}, 
+   3.514913682984375*^9, {3.51516164134375*^9, 3.5151616605*^9}}],
+
+Cell[BoxData["4"], "Output",
+ CellChangeTimes->{
+  3.514904750125*^9, 3.514904896421875*^9, 3.5149064704375*^9, 
+   3.514906698015625*^9, 3.51490896159375*^9, 3.514909326125*^9, 
+   3.51490970978125*^9, 3.514913714515625*^9, 3.51508392790625*^9, 
+   3.515095966109375*^9, 3.515097547140625*^9, 3.515161429421875*^9, {
+   3.515161654796875*^9, 3.5151616608125*^9}, 3.515163498359375*^9, 
+   3.515175153890625*^9, 3.515175297765625*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Object", "[", "a", "]"}], "@", 
+  RowBox[{"f", "[", "]"}]}]], "Input",
+ CellChangeTimes->{{3.514903801*^9, 3.51490380871875*^9}, 
+   3.514904686109375*^9, 3.514913683546875*^9}],
+
+Cell[BoxData["16"], "Output",
+ CellChangeTimes->{{3.514903809015625*^9, 3.514903843515625*^9}, 
+   3.514904219*^9, {3.514904686453125*^9, 3.514904702*^9}, 
+   3.51490489771875*^9, 3.514906471140625*^9, 3.514908962171875*^9, 
+   3.514909207765625*^9, 3.51490932671875*^9, 3.514909710296875*^9, 
+   3.514913715703125*^9, 3.515083930265625*^9, 3.515095966828125*^9, 
+   3.51509754784375*^9, 3.515161430015625*^9, 3.51516165553125*^9, 
+   3.515163498984375*^9, 3.515175154609375*^9, 3.51517529828125*^9}]
+}, Open  ]],
+
+Cell["\<\
+Note: When using the @ syntax to invoke a method, parenthesization is *not* \
+usually necessary, due to high precedence of @...\
+\>", "Text",
+ CellChangeTimes->{{3.514904808078125*^9, 3.5149048093125*^9}, 
+   3.51490689484375*^9, 3.514913685015625*^9, {3.5149137274375*^9, 
+   3.514913743453125*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"Object", "[", "a", "]"}], "@", 
+     RowBox[{"Getn", "[", "]"}]}], "^", "2"}], ",", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"Object", "[", "a", "]"}], "@", 
+      RowBox[{"Getn", "[", "]"}]}], ")"}], "^", "2"}]}], "}"}]], "Input",
+ CellChangeTimes->{{3.514904816453125*^9, 3.5149048211875*^9}, {
+  3.514913686359375*^9, 3.51491368696875*^9}, {3.515084012734375*^9, 
+  3.515084016140625*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"16", ",", "16"}], "}"}]], "Output",
+ CellChangeTimes->{3.5149048219375*^9, 3.514904899640625*^9, 
+  3.5149064725625*^9, 3.514908963421875*^9, 3.51490920884375*^9, 
+  3.51490932790625*^9, 3.5149097114375*^9, 3.51491371890625*^9, 
+  3.51508401659375*^9, 3.515097549796875*^9, 3.515175158609375*^9, 
+  3.515175299296875*^9}]
+}, Open  ]],
+
+Cell["Metadata", "Text",
+ CellChangeTimes->{{3.5149055103125*^9, 3.514905511421875*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ObjectExistsQ", "[", 
+  RowBox[{"Object", "[", "a", "]"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ObjectClass", "[", 
+  RowBox[{"Object", "[", "a", "]"}], "]"}], "\n", 
+ RowBox[{"ShowObjectInformation", "[", 
+  RowBox[{"Object", "[", "a", "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.514904907703125*^9, 3.514904911328125*^9}, 
+   3.514913689484375*^9, {3.5150840230625*^9, 3.515084055359375*^9}, 
+   3.515175113609375*^9, 3.515175393375*^9}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{{3.514905460015625*^9, 3.51490549675*^9}, 
+   3.514906476453125*^9, 3.514908965515625*^9, 3.51490921121875*^9, 
+   3.514909331125*^9, 3.514909714390625*^9, 3.51490984128125*^9, 
+   3.514913747390625*^9, 3.51508405628125*^9, 3.51509755153125*^9, 
+   3.51516143315625*^9, 3.51516166421875*^9, 3.515163503484375*^9, 
+   3.515163587609375*^9, 3.51517515965625*^9, 3.51517520584375*^9, 
+   3.5151753005*^9}],
+
+Cell[BoxData["MyPolygon"], "Output",
+ CellChangeTimes->{{3.514905460015625*^9, 3.51490549675*^9}, 
+   3.514906476453125*^9, 3.514908965515625*^9, 3.51490921121875*^9, 
+   3.514909331125*^9, 3.514909714390625*^9, 3.51490984128125*^9, 
+   3.514913747390625*^9, 3.51508405628125*^9, 3.51509755153125*^9, 
+   3.51516143315625*^9, 3.51516166421875*^9, 3.515163503484375*^9, 
+   3.515163587609375*^9, 3.51517515965625*^9, 3.51517520584375*^9, 
+   3.51517530053125*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Object name: \"\>", "\[InvisibleSpace]", "a"}],
+  SequenceForm["Object name: ", $CellContext`a],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.515084056375*^9, 3.51509755159375*^9, 
+  3.515161433234375*^9, 3.515161664296875*^9, 3.5151635035*^9, 
+  3.515163587671875*^9, 3.51517515975*^9, 3.515175205921875*^9, 
+  3.515175300578125*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Class: \"\>", "\[InvisibleSpace]", "MyPolygon"}],
+  SequenceForm["Class: ", $CellContext`MyPolygon],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.515084056375*^9, 3.51509755159375*^9, 
+  3.515161433234375*^9, 3.515161664296875*^9, 3.5151635035*^9, 
+  3.515163587671875*^9, 3.51517515975*^9, 3.515175205921875*^9, 
+  3.515175300625*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Instance identifier: \"\>", "\[InvisibleSpace]", "Instance$3"}],
+  SequenceForm["Instance identifier: ", SciDraw`MathObject`Data`Instance$3],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.515084056375*^9, 3.51509755159375*^9, 
+  3.515161433234375*^9, 3.515161664296875*^9, 3.5151635035*^9, 
+  3.515163587671875*^9, 3.51517515975*^9, 3.515175205921875*^9, 
+  3.515175300625*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"MyPolygon$n", "\[Rule]", "4"}], "}"}]], "Print",
+ CellChangeTimes->{3.515084056375*^9, 3.51509755159375*^9, 
+  3.515161433234375*^9, 3.515161664296875*^9, 3.5151635035*^9, 
+  3.515163587671875*^9, 3.51517515975*^9, 3.515175205921875*^9, 
+  3.515175300671875*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell["Global data inspection", "Text",
+ CellChangeTimes->{{3.514909808671875*^9, 3.514909814609375*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Definition", "[", "$ObjectRegistry", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Definition", "[", "$ObjectClass", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Definition", "[", "$ObjectInstanceIdentifier", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Definition", "[", "$ObjectReference", "]"}]}], "Input",
+ CellChangeTimes->{{3.5149103140625*^9, 3.51491031696875*^9}, 
+   3.514910369890625*^9, {3.51508410371875*^9, 3.515084155515625*^9}, 
+   3.5151630435625*^9, 3.515175114328125*^9, 3.515175263453125*^9}],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{"$ObjectRegistry", "=", 
+         RowBox[{"{", 
+          RowBox[{"Object", "[", "a", "]"}], "}"}]}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[SciDraw`MathObject`$ObjectRegistry],
+  Editable->False]], "Output",
+ CellChangeTimes->{{3.515084107296875*^9, 3.51508415578125*^9}, 
+   3.5150842753125*^9, 3.515161702296875*^9, 3.5151636060625*^9, 
+   3.51517520896875*^9, 3.515175306984375*^9}],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{
+         RowBox[{"$ObjectClass", "[", 
+          RowBox[{"Object", "[", "a", "]"}], "]"}], "=", "MyPolygon"}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[SciDraw`MathObject`$ObjectClass],
+  Editable->False]], "Output",
+ CellChangeTimes->{{3.515084107296875*^9, 3.51508415578125*^9}, 
+   3.5150842753125*^9, 3.515161702296875*^9, 3.5151636060625*^9, 
+   3.51517520896875*^9, 3.51517530703125*^9}],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{
+         RowBox[{"$ObjectInstanceIdentifier", "[", 
+          RowBox[{"Object", "[", "a", "]"}], "]"}], "=", "Instance$3"}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[SciDraw`MathObject`$ObjectInstanceIdentifier],
+  Editable->False]], "Output",
+ CellChangeTimes->{{3.515084107296875*^9, 3.51508415578125*^9}, 
+   3.5150842753125*^9, 3.515161702296875*^9, 3.5151636060625*^9, 
+   3.51517520896875*^9, 3.515175307078125*^9}],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{
+         RowBox[{"$ObjectReference", "[", "Instance$3", "]"}], "=", 
+         RowBox[{"Object", "[", "a", "]"}]}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[SciDraw`MathObject`$ObjectReference],
+  Editable->False]], "Output",
+ CellChangeTimes->{{3.515084107296875*^9, 3.51508415578125*^9}, 
+   3.5150842753125*^9, 3.515161702296875*^9, 3.5151636060625*^9, 
+   3.51517520896875*^9, 3.515175307125*^9}]
+}, Open  ]],
+
+Cell["Clearing data", "Text",
+ CellChangeTimes->{{3.514907272453125*^9, 3.514907274328125*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Destroy", "[", 
+  RowBox[{"Object", "[", "a", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.514909833*^9, 3.5149098334375*^9}, {
+  3.515084162546875*^9, 3.51508419809375*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Definition", "[", "$ObjectRegistry", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ObjectExistsQ", "[", 
+  RowBox[{"Object", "[", "a", "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.514909833*^9, 3.5149098334375*^9}, {
+   3.515084162546875*^9, 3.51508419809375*^9}, {3.515084286171875*^9, 
+   3.5150842865625*^9}, 3.515175394921875*^9}],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{"$ObjectRegistry", "=", 
+         RowBox[{"{", "}"}]}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[SciDraw`MathObject`$ObjectRegistry],
+  Editable->False]], "Output",
+ CellChangeTimes->{3.515084177328125*^9, 3.5150842338125*^9, 
+  3.51508429009375*^9, 3.515161708234375*^9, 3.515163613484375*^9, 
+  3.515175334734375*^9}],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{3.515084177328125*^9, 3.5150842338125*^9, 
+  3.51508429009375*^9, 3.515161708234375*^9, 3.515163613484375*^9, 
+  3.51517533478125*^9}]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Constructor syntax", "Subsection",
+ CellChangeTimes->{{3.515095476859375*^9, 3.515095479421875*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"MyPolygon", "[", "b", "]"}], "[", 
+  RowBox[{"4", ",", "5"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"MyPolygon", "[", "]"}], "[", 
+  RowBox[{"4", ",", "5"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.51490220240625*^9, 3.51490221371875*^9}, {
+  3.51509548290625*^9, 3.51509548509375*^9}, {3.515095914265625*^9, 
+  3.515095916*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"MyPolygon", "::", "objsyntax"}], "MessageName"], ":", 
+  " ", "\<\"Missing or unexpected arguments, attempting to create object \
+\[NoBreak]\\!\\(MyPolygon\\)\[NoBreak][\[NoBreak]\\!\\(b\\)\[NoBreak]], with \
+arguments \[NoBreak]\\!\\({4, 5}\\)\[NoBreak].\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{
+  3.515095564875*^9, 3.51509566334375*^9, {3.5150958105*^9, 
+   3.515095826359375*^9}, {3.515095893765625*^9, 3.515095916390625*^9}, 
+   3.5150975566875*^9}],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{{3.51490220696875*^9, 3.5149022140625*^9}, {
+   3.514902422875*^9, 3.51490245828125*^9}, 3.514903148296875*^9, 
+   3.514903570109375*^9, 3.514903642328125*^9, {3.51490372234375*^9, 
+   3.514903744015625*^9}, {3.514903827421875*^9, 3.51490384165625*^9}, 
+   3.514903958546875*^9, 3.514904223609375*^9, 3.514904572328125*^9, 
+   3.514904895796875*^9, 3.5149064696875*^9, 3.514906581203125*^9, {
+   3.514906691640625*^9, 3.514906693359375*^9}, {3.51490685759375*^9, 
+   3.514906886953125*^9}, 3.51490887253125*^9, 3.514908960234375*^9, 
+   3.514909206390625*^9, 3.51490932559375*^9, {3.514909693671875*^9, 
+   3.514909709078125*^9}, 3.514909913109375*^9, 3.514909948625*^9, 
+   3.51491025675*^9, {3.514910287234375*^9, 3.514910303296875*^9}, {
+   3.514910344640625*^9, 3.51491036178125*^9}, 3.514913713234375*^9, 
+   3.51508386365625*^9, {3.51508391171875*^9, 3.515083919484375*^9}, 
+   3.515084272015625*^9, {3.515095464140625*^9, 3.51509548578125*^9}, 
+   3.51509556490625*^9, 3.515095663390625*^9, {3.515095810546875*^9, 
+   3.51509582640625*^9}, {3.515095893828125*^9, 3.51509591640625*^9}, 
+   3.51509755671875*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"MyPolygon", "::", "objsyntax"}], "MessageName"], ":", 
+  " ", "\<\"Missing or unexpected arguments, attempting to create object \
+\[NoBreak]\\!\\(MyPolygon\\)\[NoBreak][\[NoBreak]\\!\\(\\\"\\\"\\)\[NoBreak]],\
+ with arguments \[NoBreak]\\!\\({4, 5}\\)\[NoBreak].\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{
+  3.515095564875*^9, 3.51509566334375*^9, {3.5150958105*^9, 
+   3.515095826359375*^9}, {3.515095893765625*^9, 3.515095916390625*^9}, 
+   3.51509755678125*^9}],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{{3.51490220696875*^9, 3.5149022140625*^9}, {
+   3.514902422875*^9, 3.51490245828125*^9}, 3.514903148296875*^9, 
+   3.514903570109375*^9, 3.514903642328125*^9, {3.51490372234375*^9, 
+   3.514903744015625*^9}, {3.514903827421875*^9, 3.51490384165625*^9}, 
+   3.514903958546875*^9, 3.514904223609375*^9, 3.514904572328125*^9, 
+   3.514904895796875*^9, 3.5149064696875*^9, 3.514906581203125*^9, {
+   3.514906691640625*^9, 3.514906693359375*^9}, {3.51490685759375*^9, 
+   3.514906886953125*^9}, 3.51490887253125*^9, 3.514908960234375*^9, 
+   3.514909206390625*^9, 3.51490932559375*^9, {3.514909693671875*^9, 
+   3.514909709078125*^9}, 3.514909913109375*^9, 3.514909948625*^9, 
+   3.51491025675*^9, {3.514910287234375*^9, 3.514910303296875*^9}, {
+   3.514910344640625*^9, 3.51491036178125*^9}, 3.514913713234375*^9, 
+   3.51508386365625*^9, {3.51508391171875*^9, 3.515083919484375*^9}, 
+   3.515084272015625*^9, {3.515095464140625*^9, 3.51509548578125*^9}, 
+   3.51509556490625*^9, 3.515095663390625*^9, {3.515095810546875*^9, 
+   3.51509582640625*^9}, {3.515095893828125*^9, 3.51509591640625*^9}, 
+   3.515097556828125*^9}]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Method validation", "Subsection",
+ CellChangeTimes->{{3.51509680128125*^9, 3.5150968039375*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"MyPolygon", "[", "a", "]"}], "[", "4", "]"}]], "Input",
+ CellChangeTimes->{{3.51490220240625*^9, 3.51490221371875*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Object", "[", "a", "]"}]], "Output",
+ CellChangeTimes->{{3.51490220696875*^9, 3.5149022140625*^9}, {
+   3.514902422875*^9, 3.51490245828125*^9}, 3.514903148296875*^9, 
+   3.514903570109375*^9, 3.514903642328125*^9, {3.51490372234375*^9, 
+   3.514903744015625*^9}, {3.514903827421875*^9, 3.51490384165625*^9}, 
+   3.514903958546875*^9, 3.514904223609375*^9, 3.514904572328125*^9, 
+   3.514904895796875*^9, 3.5149064696875*^9, 3.514906581203125*^9, {
+   3.514906691640625*^9, 3.514906693359375*^9}, {3.51490685759375*^9, 
+   3.514906886953125*^9}, 3.51490887253125*^9, 3.514908960234375*^9, 
+   3.514909206390625*^9, 3.51490932559375*^9, {3.514909693671875*^9, 
+   3.514909709078125*^9}, 3.514909913109375*^9, 3.514909948625*^9, 
+   3.51491025675*^9, {3.514910287234375*^9, 3.514910303296875*^9}, {
+   3.514910344640625*^9, 3.51491036178125*^9}, 3.514913713234375*^9, 
+   3.51508386365625*^9, {3.51508391171875*^9, 3.515083919484375*^9}, 
+   3.515084272015625*^9, 3.515095464140625*^9, 3.51509565840625*^9, 
+   3.51509596540625*^9, 3.51509606203125*^9, 3.5150962186875*^9, 
+   3.51509671975*^9, 3.51509717853125*^9, 3.5150972246875*^9, 
+   3.5150974381875*^9, 3.51509748796875*^9, {3.515097536171875*^9, 
+   3.515097544484375*^9}, 3.515097603234375*^9, 3.51516142878125*^9, {
+   3.51516163575*^9, 3.51516165409375*^9}, 3.51516332065625*^9, 
+   3.51516349728125*^9, 3.5151635839375*^9, 3.515163637578125*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Object", "[", "x", "]"}], "@", 
+  RowBox[{"f", "[", "]"}]}]], "Input",
+ CellChangeTimes->{{3.51509681271875*^9, 3.515096816484375*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Object", "::", "objaccess"}], "MessageName"], ":", 
+  " ", "\<\"Object does not exist, attempting to access method \
+\[NoBreak]\\!\\(Object[x]\\)\[NoBreak]@\[NoBreak]\\!\\(f\\)\[NoBreak][...].\"\
+\>"}]], "Message", "MSG",
+ CellChangeTimes->{
+  3.515096816859375*^9, 3.51509713525*^9, 3.51509762115625*^9, {
+   3.51516362246875*^9, 3.515163638296875*^9}}],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{
+  3.51509681690625*^9, 3.51509713525*^9, 3.5150976211875*^9, {3.5151636225*^9,
+    3.515163638328125*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Object", "[", "a", "]"}], "@", 
+  RowBox[{"g", "[", "]"}]}]], "Input",
+ CellChangeTimes->{{3.515083934453125*^9, 3.515083934765625*^9}, 
+   3.515096676015625*^9, 3.515096716453125*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"MyPolygon", "::", "objmethod"}], "MessageName"], ":", 
+  " ", "\<\"No such method is defined for this class, attempting to access \
+method \[NoBreak]\\!\\(MyPolygon\\)\[NoBreak][\[NoBreak]\\!\\(a\\)\[NoBreak]]@\
+\[NoBreak]\\!\\(g\\)\[NoBreak][...].\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.515083935375*^9, 3.515083954875*^9}, 3.5150839993125*^9,
+    3.515095967640625*^9, {3.515096049359375*^9, 3.51509606509375*^9}, {
+   3.515096213375*^9, 3.515096221953125*^9}, 3.515096283546875*^9, 
+   3.515096327328125*^9, 3.5150963711875*^9, 3.515096495203125*^9, {
+   3.5150965916875*^9, 3.515096610234375*^9}, 3.5150966764375*^9, {
+   3.51509671015625*^9, 3.515096725046875*^9}, {3.515097105359375*^9, 
+   3.5150971256875*^9}, 3.515097191*^9, 3.515097231359375*^9, 
+   3.51509756784375*^9, 3.515097610984375*^9, {3.51516362475*^9, 
+   3.515163639828125*^9}}],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{{3.515083935421875*^9, 3.515083954875*^9}, 
+   3.51508399934375*^9, 3.5150959676875*^9, {3.51509604940625*^9, 
+   3.515096065125*^9}, {3.515096213421875*^9, 3.515096222*^9}, 
+   3.51509628359375*^9, 3.515096327375*^9, 3.515096371265625*^9, 
+   3.51509649525*^9, {3.51509659171875*^9, 3.51509661028125*^9}, 
+   3.51509667646875*^9, {3.515096710203125*^9, 3.515096725046875*^9}, {
+   3.51509710540625*^9, 3.51509712571875*^9}, 3.515097191*^9, 
+   3.515097231390625*^9, 3.515097567859375*^9, 3.515097611015625*^9, {
+   3.51516362478125*^9, 3.515163639859375*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Object", "[", "a", "]"}], "@", 
+  RowBox[{"f", "[", 
+   RowBox[{"1", ",", "2", ",", "3", ",", "4", ",", "5"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.51509683925*^9, 3.515096841703125*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"MyPolygon", "::", "objmethodsyntax"}], "MessageName"], ":", 
+  " ", "\<\"Missing or unexpected arguments, attempting to access method \
+\[NoBreak]\\!\\(MyPolygon\\)\[NoBreak][\[NoBreak]\\!\\(a\\)\[NoBreak]]@\
+\[NoBreak]\\!\\(f\\)\[NoBreak][...], with arguments \[NoBreak]\\!\\({1, 2, 3, \
+4, 5}\\)\[NoBreak].\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{
+  3.515097140125*^9, {3.515097171625*^9, 3.515097181390625*^9}, 
+   3.5150972299375*^9, 3.515097430921875*^9, 3.515097560859375*^9, 
+   3.515097606484375*^9, 3.51509768465625*^9, {3.515163626203125*^9, 
+   3.51516364325*^9}}],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{
+  3.515096842125*^9, 3.515097140171875*^9, {3.51509717165625*^9, 
+   3.515097181453125*^9}, 3.515097229984375*^9, 3.51509743096875*^9, 
+   3.51509756090625*^9, 3.51509760653125*^9, 3.515097684703125*^9, {
+   3.515163626234375*^9, 3.51516364328125*^9}}]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Unnamed object", "Subsection",
+ CellChangeTimes->{{3.51490722653125*^9, 3.514907229296875*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"MyPolygon", "[", "]"}], "[", "5", "]"}]], "Input",
+ CellChangeTimes->{{3.514907148859375*^9, 3.51490715221875*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Object", "[", "ObjectData`UnnamedObject$5", "]"}]], "Output",
+ CellChangeTimes->{3.514907153046875*^9, 3.51490721665625*^9, 
+  3.51490725725*^9, 3.514913758265625*^9, 3.5150842296875*^9}]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Existence validation", "Subsection",
+ CellChangeTimes->{{3.51491223684375*^9, 3.514912239765625*^9}}],
+
+Cell["Double creation", "Text",
+ CellChangeTimes->{{3.514912672953125*^9, 3.514912676453125*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"MyPolygon", "[", "a", "]"}], "[", "4", "]"}], "\n", 
+ RowBox[{
+  RowBox[{"MyPolygon", "[", "a", "]"}], "[", "4", "]"}]}], "Input",
+ CellChangeTimes->{3.5149122531875*^9}],
+
+Cell[BoxData[
+ RowBox[{"Object", "[", "a", "]"}]], "Output",
+ CellChangeTimes->{{3.514912241609375*^9, 3.51491224809375*^9}, 
+   3.514912298828125*^9, 3.51491238678125*^9, {3.5149127186875*^9, 
+   3.5149127231875*^9}, {3.51491276196875*^9, 3.514912765796875*^9}, 
+   3.5149137998125*^9, 3.5150843065625*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Object", "::", "duplicate"}], "MessageName"], ":", 
+  " ", "\<\"Attempting to create object \
+Object[\[NoBreak]\\!\\(a\\)\[NoBreak]] of class \[NoBreak]\\!\\(MyPolygon\\)\
+\[NoBreak] when an object of that name already exists.\"\>"}]], "Message", \
+"MSG",
+ CellChangeTimes->{
+  3.5149122480625*^9, 3.514912298859375*^9, 3.5149123868125*^9, {
+   3.514912718640625*^9, 3.514912723234375*^9}, {3.514912761921875*^9, 
+   3.51491276584375*^9}, 3.514913799921875*^9, 3.515084306640625*^9}],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{{3.514912241609375*^9, 3.51491224809375*^9}, 
+   3.514912298828125*^9, 3.51491238678125*^9, {3.5149127186875*^9, 
+   3.5149127231875*^9}, {3.51491276196875*^9, 3.514912765796875*^9}, 
+   3.5149137998125*^9, 3.5150843066875*^9}]
+}, Open  ]],
+
+Cell["Double destruction", "Text",
+ CellChangeTimes->{{3.51491268009375*^9, 3.5149126825625*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Destroy", "[", 
+  RowBox[{"Object", "[", "a", "]"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Destroy", "[", 
+  RowBox[{"Object", "[", "a", "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.51491226121875*^9, 3.5149122655625*^9}, {
+  3.5150843091875*^9, 3.5150843150625*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Object", "::", "nodestroy"}], "MessageName"], ":", 
+  " ", "\<\"Attempting to destroy object \[NoBreak]\\!\\(Object[a]\\)\
+\[NoBreak] when this object does not exist.\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{
+  3.5149122664375*^9, 3.514912300421875*^9, 3.51491238765625*^9, 
+   3.514912720921875*^9, {3.514912764171875*^9, 3.51491279171875*^9}, 
+   3.514913801390625*^9, 3.5150843155*^9}]
+}, Open  ]],
+
+Cell["Just plain not defined", "Text",
+ CellChangeTimes->{{3.514912685671875*^9, 3.51491268834375*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Object", "[", "b", "]"}], "@", 
+  RowBox[{"Getn", "[", "]"}]}]], "Input",
+ CellChangeTimes->{{3.514912307609375*^9, 3.514912323890625*^9}, 
+   3.5149123616875*^9, 3.51491369396875*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Object", "::", "access"}], "MessageName"], ":", 
+  " ", "\<\"Attempting to access method \[NoBreak]\\!\\(Getn\\)\[NoBreak][] \
+of object \[NoBreak]\\!\\(Object[b]\\)\[NoBreak] when this object does not \
+exist.\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.514912324765625*^9, 3.514912389640625*^9}, 
+   3.51491277946875*^9, 3.514913804640625*^9, 3.515084323515625*^9}],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{{3.5149123148125*^9, 3.514912389671875*^9}, 
+   3.5149127795*^9, 3.514913804671875*^9, 3.515084323515625*^9}]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Scoping", "Subsection",
+ CellChangeTimes->{{3.514912216421875*^9, 3.514912217453125*^9}}],
+
+Cell["Before", "Text",
+ CellChangeTimes->{{3.515084408296875*^9, 3.5150844089375*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"MyPolygon", "[", "a", "]"}], "[", "4", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", "$ObjectRegistry", "]"}]}], "Input",
+ CellChangeTimes->{{3.514912419796875*^9, 3.514912432375*^9}, {
+  3.5150843485*^9, 3.51508434878125*^9}, {3.515084467515625*^9, 
+  3.515084468046875*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Object", "[", "a", "]"}]], "Output",
+ CellChangeTimes->{
+  3.5149124655625*^9, 3.514912795609375*^9, {3.5149128439375*^9, 
+   3.514912860265625*^9}, {3.514913827453125*^9, 3.51491384453125*^9}, 
+   3.5150843494375*^9, {3.515084469046875*^9, 3.5150844874375*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"Object", "[", "a", "]"}], "}"}]], "Print",
+ CellChangeTimes->{{3.515084469078125*^9, 3.515084487484375*^9}}]
+}, Open  ]],
+
+Cell["During", "Text",
+ CellChangeTimes->{{3.515084411015625*^9, 3.515084411859375*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ScopeObjects", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"MyPolygon", "[", "b", "]"}], "[", "4", "]"}], ";", 
+   "\[IndentingNewLine]", 
+   RowBox[{"ShowObjectInformation", "[", 
+    RowBox[{"Object", "[", "b", "]"}], "]"}], ";", "\[IndentingNewLine]", 
+   RowBox[{"Print", "[", "$ObjectRegistry", "]"}]}], "\[IndentingNewLine]", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.514912434875*^9, 3.51491248690625*^9}, 
+   3.5149136955625*^9, {3.515084358421875*^9, 3.515084383296875*^9}, {
+   3.515084440484375*^9, 3.515084450578125*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Object: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"Object", "[", "b", "]"}]}],
+  SequenceForm["Object: ", 
+   MathObject`Object[$CellContext`b]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.5150843835625*^9, 3.515084444921875*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Type: \"\>", "\[InvisibleSpace]", "MyPolygon"}],
+  SequenceForm["Type: ", $CellContext`MyPolygon],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.5150843835625*^9, 3.515084444953125*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"Object", "[", "a", "]"}], ",", 
+   RowBox[{"Object", "[", "b", "]"}]}], "}"}]], "Print",
+ CellChangeTimes->{3.5150843835625*^9, 3.515084445*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{"$ObjectRegistry", "=", 
+         RowBox[{"{", 
+          RowBox[{"Object", "[", "a", "]"}], "}"}]}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[MathObject`$ObjectRegistry],
+  Editable->False]], "Output",
+ CellChangeTimes->{
+  3.5149124894375*^9, {3.5149127975625*^9, 3.51491281546875*^9}, 
+   3.5149128635625*^9, 3.5149138465*^9, {3.515084364625*^9, 
+   3.51508438365625*^9}, 3.515084445046875*^9}]
+}, Open  ]],
+
+Cell["After", "Text",
+ CellChangeTimes->{{3.515084414453125*^9, 3.51508441496875*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ShowObjectInformation", "[", 
+   RowBox[{"Object", "[", "b", "]"}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", "$ObjectRegistry", "]"}]}], "Input",
+ CellChangeTimes->{3.515084461296875*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Object: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"Object", "[", "b", "]"}]}],
+  SequenceForm["Object: ", 
+   MathObject`Object[$CellContext`b]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.51508442759375*^9, 3.515084461890625*^9}],
+
+Cell[BoxData["\<\"Object not defined.\"\>"], "Print",
+ CellChangeTimes->{3.51508442759375*^9, 3.51508446190625*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"Object", "[", "a", "]"}], "}"}]], "Print",
+ CellChangeTimes->{3.51508442759375*^9, 3.515084461953125*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["And check robustness against abort...", "Subsection",
+ CellChangeTimes->{{3.514912580953125*^9, 3.51491258853125*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ScopeObjects", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"MyPolygon", "[", "b", "]"}], "[", "4", "]"}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"ShowObjectInformation", "[", 
+     RowBox[{"Object", "[", "b", "]"}], "]"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Print", "[", "$ObjectRegistry", "]"}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Abort", "[", "]"}]}], "\[IndentingNewLine]", "]"}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.514912565890625*^9, 3.51491256828125*^9}, 
+   3.51491369778125*^9, {3.515084511890625*^9, 3.51508451975*^9}, 
+   3.515176347203125*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Object name: \"\>", "\[InvisibleSpace]", "b"}],
+  SequenceForm["Object name: ", $CellContext`b],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.515176348125*^9, 3.515176360125*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Class: \"\>", "\[InvisibleSpace]", "MyPolygon"}],
+  SequenceForm["Class: ", $CellContext`MyPolygon],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.515176348125*^9, 3.515176360171875*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Instance identifier: \"\>", "\[InvisibleSpace]", "Instance$5"}],
+  SequenceForm["Instance identifier: ", SciDraw`MathObject`Data`Instance$5],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.515176348125*^9, 3.51517636021875*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"MyPolygon$n", "\[Rule]", "4"}], "}"}]], "Print",
+ CellChangeTimes->{{3.515176348125*^9, 3.515176360265625*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"Object", "[", "b", "]"}], "}"}]], "Print",
+ CellChangeTimes->{{3.515176348125*^9, 3.515176360296875*^9}}]
+}, Open  ]],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellChangeTimes->{{3.51517634834375*^9, 3.515176360328125*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Print", "[", "$ObjectRegistry", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.514912565890625*^9, 3.51491256828125*^9}, 
+   3.51491369778125*^9, {3.515084511890625*^9, 3.51508451975*^9}, 
+   3.515176347203125*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Print",
+ CellChangeTimes->{
+  3.514912568703125*^9, 3.51491282065625*^9, 3.514912867484375*^9, 
+   3.514913853390625*^9, 3.515084520203125*^9, {3.515176319671875*^9, 
+   3.5151763491875*^9}}]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Inheritance", "Subsection",
+ CellChangeTimes->{{3.515084527359375*^9, 3.515084528828125*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"DeclareClass", "[", 
+   RowBox[{"MyLocalizedPolygon", ",", "MyPolygon", ",", 
+    RowBox[{"{", "\"\<P\>\"", "}"}], ",", 
+    RowBox[{"{", "\"\<g\>\"", "}"}]}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.51508454646875*^9, 3.515084563390625*^9}, {
+  3.51508463759375*^9, 3.51508465390625*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Definition", "[", "\[NoBreak]", "MathObject`Private`ClassParent", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Definition", "[", "\[NoBreak]", 
+  "MathObject`Private`ClassDataMemberNames", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Definition", "[", "\[NoBreak]", 
+  "MathObject`Private`ClassMethodNames", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Definition", "[", "\[NoBreak]", "MathObject`Private`ClassMethods", 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.515084585140625*^9, 3.515084599609375*^9}, {
+  3.5150846483125*^9, 3.515084696671875*^9}, {3.5150847315625*^9, 
+  3.515084733984375*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{
+         RowBox[{
+         "MathObject`Private`ClassParent", "[", "MyLocalizedPolygon", "]"}], 
+         "=", "MyPolygon"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"MathObject`Private`ClassParent", "[", "MyPolygon", "]"}], 
+         "=", "None"}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[MathObject`Private`ClassParent],
+  Editable->False]], "Output",
+ CellChangeTimes->{{3.515084589671875*^9, 3.5150846001875*^9}, {
+   3.51508464484375*^9, 3.515084696953125*^9}, 3.515084734484375*^9}],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{
+         RowBox[{
+         "MathObject`Private`ClassDataMemberNames", "[", "MyLocalizedPolygon",
+           "]"}], "=", 
+         RowBox[{"{", 
+          RowBox[{"\<\"P\"\>", ",", "\<\"n\"\>"}], "}"}]}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{
+         "MathObject`Private`ClassDataMemberNames", "[", "MyPolygon", "]"}], 
+         "=", 
+         RowBox[{"{", "\<\"n\"\>", "}"}]}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[MathObject`Private`ClassDataMemberNames],
+  Editable->False]], "Output",
+ CellChangeTimes->{{3.515084589671875*^9, 3.5150846001875*^9}, {
+   3.51508464484375*^9, 3.515084696953125*^9}, 3.515084734515625*^9}],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{
+         RowBox[{
+         "MathObject`Private`ClassMethodNames", "[", "MyLocalizedPolygon", 
+          "]"}], "=", 
+         RowBox[{"{", 
+          RowBox[{"\<\"g\"\>", ",", "\<\"f\"\>"}], "}"}]}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{
+         "MathObject`Private`ClassMethodNames", "[", "MyPolygon", "]"}], "=", 
+         
+         RowBox[{"{", "\<\"f\"\>", "}"}]}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[MathObject`Private`ClassMethodNames],
+  Editable->False]], "Output",
+ CellChangeTimes->{{3.515084589671875*^9, 3.5150846001875*^9}, {
+   3.51508464484375*^9, 3.515084696953125*^9}, 3.515084734578125*^9}],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{
+         RowBox[{
+         "MathObject`Private`ClassMethods", "[", "MyLocalizedPolygon", "]"}], 
+         "=", 
+         RowBox[{"{", 
+          RowBox[{
+          "SetP", ",", "GetP", ",", "Setn", ",", "Getn", ",", "g", ",", "f"}],
+           "}"}]}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"MathObject`Private`ClassMethods", "[", "MyPolygon", "]"}], 
+         "=", 
+         RowBox[{"{", 
+          RowBox[{"Setn", ",", "Getn", ",", "f"}], "}"}]}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[MathObject`Private`ClassMethods],
+  Editable->False]], "Output",
+ CellChangeTimes->{{3.515084589671875*^9, 3.5150846001875*^9}, {
+   3.51508464484375*^9, 3.515084696953125*^9}, 3.515084734625*^9}]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Check on method shadowing", "Subsection",
+ CellChangeTimes->{{3.515163472546875*^9, 3.515163476296875*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "=", "5"}], ";"}]], "Input",
+ CellChangeTimes->{{3.51516344840625*^9, 3.5151634493125*^9}, 
+   3.515163480828125*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DeclareClass", "[", 
+  RowBox[{"MyPolygon", ",", 
+   RowBox[{"{", "\"\<n\>\"", "}"}], ",", 
+   RowBox[{"{", "\"\<f\>\"", "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.514902148578125*^9, 3.51490215421875*^9}, {
+  3.51490219146875*^9, 3.51490219425*^9}, {3.5149034039375*^9, 
+  3.514903416640625*^9}, {3.5150838336875*^9, 3.51508384159375*^9}, {
+  3.515161649296875*^9, 3.51516165003125*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"f", "::", "shdw"}], "MessageName"], ":", 
+  " ", "\<\"Symbol \[NoBreak]\\!\\(\\\"f\\\"\\)\[NoBreak] appears in multiple \
+contexts \[NoBreak]\\!\\({\\\"SciDraw`MathObject`Method`\\\", \
+\\\"Global`\\\"}\\)\[NoBreak]; definitions in context \
+\[NoBreak]\\!\\(\\\"SciDraw`MathObject`Method`\\\"\\)\[NoBreak] may shadow or \
+be shadowed by other definitions. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/shdw\\\", \
+ButtonNote -> \\\"SciDraw`MathObject`Method`f::shdw\\\"]\\)\"\>"}]], "Message",\
+ "MSG",
+ CellChangeTimes->{3.515163454015625*^9}]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Ancestry and object pattern", "Subsection",
+ CellChangeTimes->{{3.515436290375375*^9, 3.515436306469125*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"DeclareClass", "[", 
+   RowBox[{"a", ",", 
+    RowBox[{"{", "}"}], ",", 
+    RowBox[{"{", "}"}]}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DeclareClass", "[", 
+   RowBox[{"b", ",", "a", ",", 
+    RowBox[{"{", "}"}], ",", 
+    RowBox[{"{", "}"}]}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DeclareClass", "[", 
+   RowBox[{"c", ",", "b", ",", 
+    RowBox[{"{", "}"}], ",", 
+    RowBox[{"{", "}"}]}], "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.51543386392225*^9, 3.515433885500375*^9}, 
+   3.515435153187875*^9}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Constructor", "[", 
+     RowBox[{
+      RowBox[{"Class", ":", "a"}], ",", "Self_Object"}], "]"}], "[", "]"}], ":=",
+    "Null"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Constructor", "[", 
+     RowBox[{
+      RowBox[{"Class", ":", "b"}], ",", "Self_Object"}], "]"}], "[", "]"}], ":=",
+    "Null"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Constructor", "[", 
+     RowBox[{
+      RowBox[{"Class", ":", "c"}], ",", "Self_Object"}], "]"}], "[", "]"}], ":=",
+    "Null"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.51543526942225*^9, 3.51543531829725*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ObjectPattern", "[", "a", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ObjectPattern", "[", "b", "]"}]}], "Input",
+ CellChangeTimes->{{3.51543502117225*^9, 3.515435031266*^9}, {
+   3.515435115031625*^9, 3.515435115531625*^9}, 3.51543515323475*^9, {
+   3.515435479781625*^9, 3.51543548217225*^9}}],
+
+Cell[BoxData[
+ RowBox[{"HoldPattern", "[", 
+  RowBox[{
+   RowBox[{"MathObject`Private`s$_Object", "/;", 
+    RowBox[{"ObjectExistsQ", "[", "MathObject`Private`s$", "]"}]}], "/;", 
+   RowBox[{"MemberQ", "[", 
+    RowBox[{
+     RowBox[{"ObjectClass", "[", "MathObject`Private`s$", "]"}], ",", 
+     RowBox[{"{", "a", "}"}]}], "]"}]}], "]"}]], "Output",
+ CellChangeTimes->{
+  3.51543516148475*^9, 3.515435253969125*^9, 3.5154353207035*^9, 
+   3.515435482516*^9, {3.515435876062875*^9, 3.515435906391*^9}, 
+   3.515435941437875*^9, {3.515435974594125*^9, 3.515436004437875*^9}, 
+   3.515436061266*^9}],
+
+Cell[BoxData[
+ RowBox[{"HoldPattern", "[", 
+  RowBox[{
+   RowBox[{"MathObject`Private`s$_Object", "/;", 
+    RowBox[{"ObjectExistsQ", "[", "MathObject`Private`s$", "]"}]}], "/;", 
+   RowBox[{"MemberQ", "[", 
+    RowBox[{
+     RowBox[{"ObjectClass", "[", "MathObject`Private`s$", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"a", ",", "b"}], "}"}]}], "]"}]}], "]"}]], "Output",
+ CellChangeTimes->{
+  3.51543516148475*^9, 3.515435253969125*^9, 3.5154353207035*^9, 
+   3.515435482516*^9, {3.515435876062875*^9, 3.515435906391*^9}, 
+   3.515435941437875*^9, {3.515435974594125*^9, 3.515436004437875*^9}, 
+   3.51543606129725*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ClassAncestry", "[", "a", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ClassAncestry", "[", "b", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ClassAncestry", "[", "c", "]"}]}], "Input",
+ CellChangeTimes->{{3.515435987562875*^9, 3.515436011875375*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", "a", "}"}]], "Output",
+ CellChangeTimes->{{3.515435991469125*^9, 3.515436012125375*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"a", ",", "b"}], "}"}]], "Output",
+ CellChangeTimes->{{3.515435991469125*^9, 3.515436012125375*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"a", ",", "b", ",", "c"}], "}"}]], "Output",
+ CellChangeTimes->{{3.515435991469125*^9, 3.51543601217225*^9}}]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"a", "[", "aa", "]"}], "[", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"b", "[", "bb", "]"}], "[", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"c", "[", "cc", "]"}], "[", "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.515435259437875*^9, 3.51543526167225*^9}, {
+  3.515435326906625*^9, 3.515435346391*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"MatchQ", "[", 
+  RowBox[{
+   RowBox[{"Object", "[", "aa", "]"}], ",", 
+   RowBox[{"ObjectPattern", "[", "a", "]"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"MatchQ", "[", 
+  RowBox[{
+   RowBox[{"Object", "[", "bb", "]"}], ",", 
+   RowBox[{"ObjectPattern", "[", "a", "]"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"MatchQ", "[", 
+  RowBox[{
+   RowBox[{"Object", "[", "cc", "]"}], ",", 
+   RowBox[{"ObjectPattern", "[", "a", "]"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"MatchQ", "[", 
+  RowBox[{
+   RowBox[{"Object", "[", "aa", "]"}], ",", 
+   RowBox[{"ObjectPattern", "[", "b", "]"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"MatchQ", "[", 
+  RowBox[{
+   RowBox[{"Object", "[", "bb", "]"}], ",", 
+   RowBox[{"ObjectPattern", "[", "b", "]"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"MatchQ", "[", 
+  RowBox[{
+   RowBox[{"Object", "[", "cc", "]"}], ",", 
+   RowBox[{"ObjectPattern", "[", "b", "]"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"MatchQ", "[", 
+  RowBox[{
+   RowBox[{"Object", "[", "aa", "]"}], ",", 
+   RowBox[{"ObjectPattern", "[", "c", "]"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"MatchQ", "[", 
+  RowBox[{
+   RowBox[{"Object", "[", "bb", "]"}], ",", 
+   RowBox[{"ObjectPattern", "[", "c", "]"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"MatchQ", "[", 
+  RowBox[{
+   RowBox[{"Object", "[", "cc", "]"}], ",", 
+   RowBox[{"ObjectPattern", "[", "c", "]"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.515434097719125*^9, 3.51543410010975*^9}, {
+   3.515434983016*^9, 3.5154349975785*^9}, 3.515435153250375*^9, {
+   3.51543536848475*^9, 3.5154354524535*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{{3.51543542217225*^9, 3.5154354527035*^9}, {
+   3.51543607260975*^9, 3.51543609954725*^9}, 3.51543615673475*^9}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{{3.51543542217225*^9, 3.5154354527035*^9}, {
+   3.51543607260975*^9, 3.51543609954725*^9}, 3.515436156750375*^9}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{{3.51543542217225*^9, 3.5154354527035*^9}, {
+   3.51543607260975*^9, 3.51543609954725*^9}, 3.515436156781625*^9}],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{{3.51543542217225*^9, 3.5154354527035*^9}, {
+   3.51543607260975*^9, 3.51543609954725*^9}, 3.5154361568285*^9}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{{3.51543542217225*^9, 3.5154354527035*^9}, {
+   3.51543607260975*^9, 3.51543609954725*^9}, 3.515436156875375*^9}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{{3.51543542217225*^9, 3.5154354527035*^9}, {
+   3.51543607260975*^9, 3.51543609954725*^9}, 3.515436156875375*^9}],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{{3.51543542217225*^9, 3.5154354527035*^9}, {
+   3.51543607260975*^9, 3.51543609954725*^9}, 3.515436156875375*^9}],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{{3.51543542217225*^9, 3.5154354527035*^9}, {
+   3.51543607260975*^9, 3.51543609954725*^9}, 3.51543615692225*^9}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{{3.51543542217225*^9, 3.5154354527035*^9}, {
+   3.51543607260975*^9, 3.51543609954725*^9}, 3.515436156969125*^9}]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Object constructor notation tests\
+\>", "Subsection",
+ CellChangeTimes->{{3.517673530546875*^9, 3.517673536671875*^9}, {
+  3.5180146703125*^9, 3.51801467415625*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "/:", 
+   RowBox[{
+    RowBox[{"f", "[", 
+     RowBox[{"[", "i_", "]"}], "]"}], "[", "j___", "]"}], ":=", 
+   RowBox[{"ff", "[", 
+    RowBox[{"i", ",", "j"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.51776530253125*^9, 3.517765345515625*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Part", "::", "pspec"}], "MessageName"], ":", 
+  " ", "\<\"Part specification \[NoBreak]\\!\\(i_\\)\[NoBreak] is neither an \
+integer nor a list of integers. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/pspec\\\", ButtonNote -> \
+\\\"Part::pspec\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.517765320453125*^9, 3.517765345859375*^9}, 
+   3.5177653918125*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"TagSetDelayed", "::", "tagpos"}], "MessageName"], ":", 
+  " ", "\<\"Tag \[NoBreak]\\!\\(f\\)\[NoBreak] in \[NoBreak]\\!\\(\\(\\(f \
+\[LeftDoubleBracket] i_ \[RightDoubleBracket]\\)\\)[j___]\\)\[NoBreak] is too \
+deep for an assigned rule to be found. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/TagSetDelayed/tagpos\\\", ButtonNote -> \\\
+\"TagSetDelayed::tagpos\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.517765320453125*^9, 3.517765345859375*^9}, 
+   3.51776539203125*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "/:", 
+   RowBox[{"f", "[", 
+    RowBox[{"[", "i_", "]"}], "]"}], ":=", 
+   RowBox[{"FunctionTag", "[", 
+    RowBox[{"f", ",", "i"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.51776545553125*^9, 3.5177655119375*^9}, {
+  3.517765910078125*^9, 3.517765922421875*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"FunctionTag", "[", 
+    RowBox[{"f_", ",", "i_"}], "]"}], "[", "j___", "]"}], ":=", 
+  RowBox[{"ff", "[", 
+   RowBox[{"f", ",", "i", ",", "j"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.51776545553125*^9, 3.5177655119375*^9}, {
+  3.517765910078125*^9, 3.517765976765625*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "[", 
+   RowBox[{"[", "i", "]"}], "]"}], "[", "j", "]"}]], "Input",
+ CellChangeTimes->{{3.517765467546875*^9, 3.517765476140625*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ObjectConstructorTag", "[", 
+   RowBox[{"f", ",", "i"}], "]"}], "[", "j", "]"}]], "Output",
+ CellChangeTimes->{{3.51776547665625*^9, 3.51776548425*^9}, 
+   3.517765515171875*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "[", 
+   RowBox[{"[", "3", "]"}], "]"}], "[", 
+  RowBox[{"1", ",", "2"}], "]"}]], "Input",
+ CellChangeTimes->{{3.51767322509375*^9, 3.517673230359375*^9}}],
+
+Cell["Angle brackets", "Text",
+ CellChangeTimes->{{3.517765406078125*^9, 3.517765408484375*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "/:", 
+   RowBox[{"f", 
+    RowBox[{
+     RowBox[{"\[LeftAngleBracket]", "i_", "\[RightAngleBracket]"}], "[", "j_",
+      "]"}]}], ":=", 
+   RowBox[{"ff", "[", 
+    RowBox[{"i", ",", "j"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.51767323865625*^9, 3.51767327553125*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"f", 
+  RowBox[{
+   RowBox[{"\[LeftAngleBracket]", "1", "\[RightAngleBracket]"}], "[", "2", 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.517673277140625*^9, 3.517673283875*^9}}],
+
+Cell[BoxData[
+ RowBox[{"ff", "[", 
+  RowBox[{"1", ",", "2"}], "]"}]], "Output",
+ CellChangeTimes->{3.517673284484375*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"g", 
+   RowBox[{
+    RowBox[{"\[LeftAngleBracket]", "1", "\[RightAngleBracket]"}], "[", "2", 
+    "]"}]}], "//", "FullForm"}]], "Input",
+ CellChangeTimes->{{3.517673301828125*^9, 3.517673316828125*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   RowBox[{"Times", "[", 
+    RowBox[{"g", ",", 
+     RowBox[{
+      RowBox[{"AngleBracket", "[", "1", "]"}], "[", "2", "]"}]}], "]"}],
+   ShowSpecialCharacters->False,
+   ShowStringCharacters->True,
+   NumberMarks->True],
+  FullForm]], "Output",
+ CellChangeTimes->{{3.51767330915625*^9, 3.517673317109375*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"h", "/:", 
+   RowBox[{"h", 
+    RowBox[{
+     RowBox[{"\[LeftAngleBracket]", "i_", "\[RightAngleBracket]"}], "[", 
+     "j___", "]"}]}], ":=", 
+   RowBox[{"hh", "[", 
+    RowBox[{"i", ",", "j"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.517765724265625*^9, 3.517765787109375*^9}, {
+  3.5177658254375*^9, 3.517765846390625*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"h", 
+  RowBox[{
+   RowBox[{"\[LeftAngleBracket]", "1", "\[RightAngleBracket]"}], "[", 
+   RowBox[{"2", ",", "3"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.517765832296875*^9, 3.517765850890625*^9}}],
+
+Cell[BoxData[
+ RowBox[{"hh", "[", 
+  RowBox[{"1", ",", "2", ",", "3"}], "]"}]], "Output",
+ CellChangeTimes->{{3.517765835125*^9, 3.51776585128125*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "AngleBracket"}]], "Input",
+ CellChangeTimes->{{3.517673325171875*^9, 3.517673328109375*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\\!\\(\\*RowBox[{\\\"AngleBracket\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"y\\\", \
+\\\"TI\\\"], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"]}], \
+\\\"]\\\"}]\\) displays as \\!\\(\\*RowBox[{\\\"\[LeftAngleBracket]\\\", \
+RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"y\\\", \
+\\\"TI\\\"], \\\",\\\", \\\"\[Ellipsis]\\\"}], \\\"\[RightAngleBracket]\\\"}]\
+\\).\"\>", "MSG"], "\[NonBreakingSpace]", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/AngleBracket"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.517673330734375*^9},
+ CellTags->"Info3517658930-5762677"]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"FigArrow", "[", 
+   RowBox[{"[", "a1", "]"}], "]"}], "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "2"}], "}"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"FigArrow", 
+  RowBox[{
+   RowBox[{"\[LeftAngleBracket]", "a1", "\[RightAngleBracket]"}], "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"1", ",", "1"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"2", ",", "2"}], "}"}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.51767341790625*^9, 3.517673446796875*^9}}],
+
+Cell["\<\
+\[LeftAngleBracket] is entered as Esc-<-Esc
+\[RightAngleBracket] is entered as Esc->-Esc\
+\>", "Text",
+ CellChangeTimes->{{3.5176734961875*^9, 3.517673524234375*^9}}],
+
+Cell["\[LessLess] is entered as Esc-\\-l-l-Esc", "Text",
+ CellChangeTimes->{{3.517673579390625*^9, 3.51767358978125*^9}, {
+  3.51767362125*^9, 3.51767363284375*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"a", "\[LessLess]", "b"}], "//", "FullForm"}]], "Input",
+ CellChangeTimes->{{3.51767366253125*^9, 3.5176736705*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   RowBox[{"LessLess", "[", 
+    RowBox[{"a", ",", "b"}], "]"}],
+   ShowSpecialCharacters->False,
+   ShowStringCharacters->True,
+   NumberMarks->True],
+  FullForm]], "Output",
+ CellChangeTimes->{3.51767367084375*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"f", "/:", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"f", "[", "a_", "]"}], "\[LessLess]", "g_"}], ")"}], ":=", 
+  RowBox[{"ff", "[", 
+   RowBox[{"a", ",", "g"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"f", "[", "a", "]"}], "\[LessLess]", "g"}]}], "Input",
+ CellChangeTimes->{{3.517673546046875*^9, 3.51767361296875*^9}}],
+
+Cell[BoxData[
+ RowBox[{"ff", "[", 
+  RowBox[{"a", ",", "g"}], "]"}]], "Output",
+ CellChangeTimes->{3.517673613484375*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"a", "\[RightTriangleBar]", "b"}], "//", "FullForm"}]], "Input",
+ CellChangeTimes->{{3.5177648246875*^9, 3.51776483834375*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   RowBox[{"RightTriangleBar", "[", 
+    RowBox[{"a", ",", "b"}], "]"}],
+   ShowSpecialCharacters->False,
+   ShowStringCharacters->True,
+   NumberMarks->True],
+  FullForm]], "Output",
+ CellChangeTimes->{{3.517764831390625*^9, 3.517764838640625*^9}}]
+}, Open  ]]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Tests", "Section",
+ CellChangeTimes->{{3.51491220396875*^9, 3.51491220471875*^9}, {
+   3.5149136160625*^9, 3.51491362428125*^9}, 3.514913681453125*^9, 
+   3.51508377853125*^9, {3.5180196925625*^9, 3.51801971109375*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<MathObject`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Needs", "[", "\"\<MathObject`Methods`\>\"", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Needs", "[", "\"\<MathObject`InstanceData`\>\"", "]"}]}], "Input",
+ CellChangeTimes->{{3.518019722140625*^9, 3.51801978375*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Example", "Subsection",
+ CellChangeTimes->{{3.514904762578125*^9, 3.514904763625*^9}}],
+
+Cell["Definition", "Text",
+ CellChangeTimes->{{3.5149048876875*^9, 3.514904888953125*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"DeclareClass", "[", 
+  RowBox[{"MyPolygon", ",", 
+   RowBox[{"{", "\"\<n\>\"", "}"}], ",", 
+   RowBox[{"{", "\"\<f\>\"", "}"}]}], "]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Constructor", "[", 
+    RowBox[{"MyPolygon", ",", "Self_"}], "]"}], "[", "n_Integer", "]"}], ":=", 
+  RowBox[{"Module", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"Self", "@", 
+     RowBox[{"Setn", "[", "n", "]"}]}]}], "\[IndentingNewLine]", 
+   "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", 
+    RowBox[{"MyPolygon", ",", "Self_"}], "]"}], "[", "]"}], ":=", 
+  RowBox[{"Module", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"Self", "@", 
+       RowBox[{"Getn", "[", "]"}]}], ")"}], "^", "2"}]}], 
+   "\[IndentingNewLine]", "]"}]}]}], "Input",
+ CellChangeTimes->{{3.514902148578125*^9, 3.51490215421875*^9}, {
+   3.51490219146875*^9, 3.51490219425*^9}, {3.5149034039375*^9, 
+   3.514903416640625*^9}, {3.5150838336875*^9, 3.51508384159375*^9}, {
+   3.515161649296875*^9, 3.51516165003125*^9}, 3.515163581375*^9}],
+
+Cell["Instance", "Text",
+ CellChangeTimes->{{3.514904892171875*^9, 3.514904893140625*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"MyPolygon", "\[LeftDoubleBracket]", "a", "\[RightDoubleBracket]"}],
+   "[", "4", "]"}]], "Input",
+ CellChangeTimes->{{3.51490220240625*^9, 3.51490221371875*^9}, {
+  3.51801979275*^9, 3.5180198095625*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Object", "[", "a", "]"}]], "Output",
+ CellChangeTimes->{{3.51490220696875*^9, 3.5149022140625*^9}, {
+   3.514902422875*^9, 3.51490245828125*^9}, 3.514903148296875*^9, 
+   3.514903570109375*^9, 3.514903642328125*^9, {3.51490372234375*^9, 
+   3.514903744015625*^9}, {3.514903827421875*^9, 3.51490384165625*^9}, 
+   3.514903958546875*^9, 3.514904223609375*^9, 3.514904572328125*^9, 
+   3.514904895796875*^9, 3.5149064696875*^9, 3.514906581203125*^9, {
+   3.514906691640625*^9, 3.514906693359375*^9}, {3.51490685759375*^9, 
+   3.514906886953125*^9}, 3.51490887253125*^9, 3.514908960234375*^9, 
+   3.514909206390625*^9, 3.51490932559375*^9, {3.514909693671875*^9, 
+   3.514909709078125*^9}, 3.514909913109375*^9, 3.514909948625*^9, 
+   3.51491025675*^9, {3.514910287234375*^9, 3.514910303296875*^9}, {
+   3.514910344640625*^9, 3.51491036178125*^9}, 3.514913713234375*^9, 
+   3.51508386365625*^9, {3.51508391171875*^9, 3.515083919484375*^9}, 
+   3.515084272015625*^9, 3.515095464140625*^9, 3.51509565840625*^9, 
+   3.51509596540625*^9, 3.51509606203125*^9, 3.5150962186875*^9, 
+   3.51509671975*^9, 3.51509717853125*^9, 3.5150972246875*^9, 
+   3.5150974381875*^9, 3.51509748796875*^9, {3.515097536171875*^9, 
+   3.515097544484375*^9}, 3.515097603234375*^9, 3.51516142878125*^9, {
+   3.51516163575*^9, 3.51516165409375*^9}, 3.51516332065625*^9, 
+   3.51516349728125*^9, 3.5151635839375*^9, 3.515175153140625*^9, 
+   3.515175297234375*^9, {3.51801978940625*^9, 3.518019815453125*^9}, 
+   3.51802005315625*^9, 3.51802011625*^9}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Object", "[", "a", "]"}], "@", 
+  RowBox[{"Getn", "[", "]"}]}]], "Input",
+ CellChangeTimes->{{3.51490474896875*^9, 3.514904752109375*^9}, 
+   3.514913682984375*^9, {3.51516164134375*^9, 3.5151616605*^9}}],
+
+Cell[BoxData["4"], "Output",
+ CellChangeTimes->{
+  3.514904750125*^9, 3.514904896421875*^9, 3.5149064704375*^9, 
+   3.514906698015625*^9, 3.51490896159375*^9, 3.514909326125*^9, 
+   3.51490970978125*^9, 3.514913714515625*^9, 3.51508392790625*^9, 
+   3.515095966109375*^9, 3.515097547140625*^9, 3.515161429421875*^9, {
+   3.515161654796875*^9, 3.5151616608125*^9}, 3.515163498359375*^9, 
+   3.515175153890625*^9, 3.515175297765625*^9, 3.518019796625*^9, 
+   3.518020117390625*^9}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Object", "[", "a", "]"}], "@", 
+  RowBox[{"f", "[", "]"}]}]], "Input",
+ CellChangeTimes->{{3.514903801*^9, 3.51490380871875*^9}, 
+   3.514904686109375*^9, 3.514913683546875*^9}],
+
+Cell[BoxData["16"], "Output",
+ CellChangeTimes->{{3.514903809015625*^9, 3.514903843515625*^9}, 
+   3.514904219*^9, {3.514904686453125*^9, 3.514904702*^9}, 
+   3.51490489771875*^9, 3.514906471140625*^9, 3.514908962171875*^9, 
+   3.514909207765625*^9, 3.51490932671875*^9, 3.514909710296875*^9, 
+   3.514913715703125*^9, 3.515083930265625*^9, 3.515095966828125*^9, 
+   3.51509754784375*^9, 3.515161430015625*^9, 3.51516165553125*^9, 
+   3.515163498984375*^9, 3.515175154609375*^9, 3.51517529828125*^9, 
+   3.51801979734375*^9, 3.518020118046875*^9}]
+}, Closed]],
+
+Cell["\<\
+Note: When using the @ syntax to invoke a method, parenthesization is *not* \
+usually necessary, due to high precedence of @...\
+\>", "Text",
+ CellChangeTimes->{{3.514904808078125*^9, 3.5149048093125*^9}, 
+   3.51490689484375*^9, 3.514913685015625*^9, {3.5149137274375*^9, 
+   3.514913743453125*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"Object", "[", "a", "]"}], "@", 
+     RowBox[{"Getn", "[", "]"}]}], "^", "2"}], ",", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"Object", "[", "a", "]"}], "@", 
+      RowBox[{"Getn", "[", "]"}]}], ")"}], "^", "2"}]}], "}"}]], "Input",
+ CellChangeTimes->{{3.514904816453125*^9, 3.5149048211875*^9}, {
+  3.514913686359375*^9, 3.51491368696875*^9}, {3.515084012734375*^9, 
+  3.515084016140625*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"16", ",", "16"}], "}"}]], "Output",
+ CellChangeTimes->{3.5149048219375*^9, 3.514904899640625*^9, 
+  3.5149064725625*^9, 3.514908963421875*^9, 3.51490920884375*^9, 
+  3.51490932790625*^9, 3.5149097114375*^9, 3.51491371890625*^9, 
+  3.51508401659375*^9, 3.515097549796875*^9, 3.515175158609375*^9, 
+  3.515175299296875*^9, 3.5180201205*^9}]
+}, Closed]],
+
+Cell["Metadata", "Text",
+ CellChangeTimes->{{3.5149055103125*^9, 3.514905511421875*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ObjectExistsQ", "[", 
+  RowBox[{"Object", "[", "a", "]"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ObjectClass", "[", 
+  RowBox[{"Object", "[", "a", "]"}], "]"}], "\n", 
+ RowBox[{"ShowObjectInformation", "[", 
+  RowBox[{"Object", "[", "a", "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.514904907703125*^9, 3.514904911328125*^9}, 
+   3.514913689484375*^9, {3.5150840230625*^9, 3.515084055359375*^9}, 
+   3.515175113609375*^9, 3.515175393375*^9}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{{3.514905460015625*^9, 3.51490549675*^9}, 
+   3.514906476453125*^9, 3.514908965515625*^9, 3.51490921121875*^9, 
+   3.514909331125*^9, 3.514909714390625*^9, 3.51490984128125*^9, 
+   3.514913747390625*^9, 3.51508405628125*^9, 3.51509755153125*^9, 
+   3.51516143315625*^9, 3.51516166421875*^9, 3.515163503484375*^9, 
+   3.515163587609375*^9, 3.51517515965625*^9, 3.51517520584375*^9, 
+   3.5151753005*^9, 3.51802012790625*^9}],
+
+Cell[BoxData["MyPolygon"], "Output",
+ CellChangeTimes->{{3.514905460015625*^9, 3.51490549675*^9}, 
+   3.514906476453125*^9, 3.514908965515625*^9, 3.51490921121875*^9, 
+   3.514909331125*^9, 3.514909714390625*^9, 3.51490984128125*^9, 
+   3.514913747390625*^9, 3.51508405628125*^9, 3.51509755153125*^9, 
+   3.51516143315625*^9, 3.51516166421875*^9, 3.515163503484375*^9, 
+   3.515163587609375*^9, 3.51517515965625*^9, 3.51517520584375*^9, 
+   3.5151753005*^9, 3.51802012790625*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Object name: \"\>", "\[InvisibleSpace]", "a"}],
+  SequenceForm["Object name: ", $CellContext`a],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.515084056375*^9, 3.51509755159375*^9, 
+  3.515161433234375*^9, 3.515161664296875*^9, 3.5151635035*^9, 
+  3.515163587671875*^9, 3.51517515975*^9, 3.515175205921875*^9, 
+  3.515175300578125*^9, 3.518020127921875*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"  \"\>", "\[InvisibleSpace]", "\<\"Instance identifier: \"\>", 
+   "\[InvisibleSpace]", "Instance$3"}],
+  SequenceForm[
+  "  ", "Instance identifier: ", MathObject`InstanceData`Instance$3],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.515084056375*^9, 3.51509755159375*^9, 
+  3.515161433234375*^9, 3.515161664296875*^9, 3.5151635035*^9, 
+  3.515163587671875*^9, 3.51517515975*^9, 3.515175205921875*^9, 
+  3.515175300578125*^9, 3.51802012796875*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"  \"\>", "\[InvisibleSpace]", "\<\"Class: \"\>", 
+   "\[InvisibleSpace]", "MyPolygon"}],
+  SequenceForm["  ", "Class: ", $CellContext`MyPolygon],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.515084056375*^9, 3.51509755159375*^9, 
+  3.515161433234375*^9, 3.515161664296875*^9, 3.5151635035*^9, 
+  3.515163587671875*^9, 3.51517515975*^9, 3.515175205921875*^9, 
+  3.515175300578125*^9, 3.518020128015625*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"  \"\>", "\[InvisibleSpace]", 
+   InterpretationBox[
+    StyleBox[
+     RowBox[{"{", 
+      RowBox[{"MyPolygon$n", " ", "->", " ", "4"}], "}"}],
+     ShowStringCharacters->True,
+     NumberMarks->True],
+    InputForm[{MathObject`InstanceData`MyPolygon$n -> 4}],
+    AutoDelete->True,
+    Editable->True]}],
+  SequenceForm["  ", 
+   InputForm[{MathObject`InstanceData`MyPolygon$n -> 4}]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.515084056375*^9, 3.51509755159375*^9, 
+  3.515161433234375*^9, 3.515161664296875*^9, 3.5151635035*^9, 
+  3.515163587671875*^9, 3.51517515975*^9, 3.515175205921875*^9, 
+  3.515175300578125*^9, 3.5180201280625*^9}]
+}, Closed]]
+}, Closed]],
+
+Cell["Global data inspection", "Text",
+ CellChangeTimes->{{3.514909808671875*^9, 3.514909814609375*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Definition", "[", "$ObjectRegistry", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Definition", "[", "$ObjectClass", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Definition", "[", "$ObjectInstanceIdentifier", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Definition", "[", "$ObjectReference", "]"}]}], "Input",
+ CellChangeTimes->{{3.5149103140625*^9, 3.51491031696875*^9}, 
+   3.514910369890625*^9, {3.51508410371875*^9, 3.515084155515625*^9}, 
+   3.5151630435625*^9, 3.515175114328125*^9, 3.515175263453125*^9}],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{"$ObjectRegistry", "=", 
+         RowBox[{"{", 
+          RowBox[{"Object", "[", "a", "]"}], "}"}]}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[MathObject`$ObjectRegistry],
+  Editable->False]], "Output",
+ CellChangeTimes->{{3.515084107296875*^9, 3.51508415578125*^9}, 
+   3.5150842753125*^9, 3.515161702296875*^9, 3.5151636060625*^9, 
+   3.51517520896875*^9, 3.515175306984375*^9, 3.51802013253125*^9}],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{
+         RowBox[{"$ObjectClass", "[", 
+          RowBox[{"Object", "[", "a", "]"}], "]"}], "=", "MyPolygon"}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[MathObject`$ObjectClass],
+  Editable->False]], "Output",
+ CellChangeTimes->{{3.515084107296875*^9, 3.51508415578125*^9}, 
+   3.5150842753125*^9, 3.515161702296875*^9, 3.5151636060625*^9, 
+   3.51517520896875*^9, 3.515175306984375*^9, 3.518020132625*^9}],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{
+         RowBox[{"$ObjectInstanceIdentifier", "[", 
+          RowBox[{"Object", "[", "a", "]"}], "]"}], "=", "Instance$3"}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[MathObject`$ObjectInstanceIdentifier],
+  Editable->False]], "Output",
+ CellChangeTimes->{{3.515084107296875*^9, 3.51508415578125*^9}, 
+   3.5150842753125*^9, 3.515161702296875*^9, 3.5151636060625*^9, 
+   3.51517520896875*^9, 3.515175306984375*^9, 3.5180201326875*^9}],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{
+         RowBox[{"$ObjectReference", "[", "Instance$3", "]"}], "=", 
+         RowBox[{"Object", "[", "a", "]"}]}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[MathObject`$ObjectReference],
+  Editable->False]], "Output",
+ CellChangeTimes->{{3.515084107296875*^9, 3.51508415578125*^9}, 
+   3.5150842753125*^9, 3.515161702296875*^9, 3.5151636060625*^9, 
+   3.51517520896875*^9, 3.515175306984375*^9, 3.51802013271875*^9}]
+}, Closed]],
+
+Cell["Clearing data", "Text",
+ CellChangeTimes->{{3.514907272453125*^9, 3.514907274328125*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Destroy", "[", 
+  RowBox[{"Object", "[", "a", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.514909833*^9, 3.5149098334375*^9}, {
+  3.515084162546875*^9, 3.51508419809375*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Definition", "[", "$ObjectRegistry", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ObjectExistsQ", "[", 
+  RowBox[{"Object", "[", "a", "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.514909833*^9, 3.5149098334375*^9}, {
+   3.515084162546875*^9, 3.51508419809375*^9}, {3.515084286171875*^9, 
+   3.5150842865625*^9}, 3.515175394921875*^9}],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{"$ObjectRegistry", "=", 
+         RowBox[{"{", "}"}]}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[MathObject`$ObjectRegistry],
+  Editable->False]], "Output",
+ CellChangeTimes->{3.515084177328125*^9, 3.5150842338125*^9, 
+  3.51508429009375*^9, 3.515161708234375*^9, 3.515163613484375*^9, 
+  3.515175334734375*^9, 3.51802013571875*^9}],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{3.515084177328125*^9, 3.5150842338125*^9, 
+  3.51508429009375*^9, 3.515161708234375*^9, 3.515163613484375*^9, 
+  3.515175334734375*^9, 3.518020135765625*^9}]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Constructor syntax", "Subsection",
+ CellChangeTimes->{{3.515095476859375*^9, 3.515095479421875*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Destroy", "[", 
+  RowBox[{"Object", "[", "b", "]"}], "]"}], "\n", 
+ RowBox[{
+  RowBox[{"MyPolygon", "[", 
+   RowBox[{"[", "b", "]"}], "]"}], "[", 
+  RowBox[{"4", ",", "5"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"MyPolygon", "[", 
+   RowBox[{"[", "b", "]"}], "]"}], "[", 
+  RowBox[{"6", ",", "7"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"MyPolygon", "[", 
+  RowBox[{"4", ",", "5"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.518020385046875*^9, 3.518020401484375*^9}, {
+  3.51802046675*^9, 3.518020473890625*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"MyPolygon", "::", "objsyntax"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Cannot create object \
+\[NoBreak]\\!\\(MyPolygon\\)\[NoBreak][[\[NoBreak]\\!\\(b\\)\[NoBreak]]][\
+\[NoBreak]\\!\\(\\\"4,5\\\"\\)\[NoBreak]] since given arguments do not match \
+any of the definitions for the constructor for class \
+\[NoBreak]\\!\\(MyPolygon\\)\[NoBreak].\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{
+  3.515095564875*^9, 3.51509566334375*^9, {3.5150958105*^9, 
+   3.515095826359375*^9}, {3.515095893765625*^9, 3.515095916390625*^9}, 
+   3.5150975566875*^9, 3.518020141515625*^9, 3.51802017934375*^9, 
+   3.51802028996875*^9, 3.51802032003125*^9, {3.518020403078125*^9, 
+   3.518020415609375*^9}, {3.518020459296875*^9, 3.518020474390625*^9}, 
+   3.518020544890625*^9, 3.5180206254375*^9, {3.518020922*^9, 
+   3.518020945265625*^9}, 3.518021006859375*^9}],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{{3.51490220696875*^9, 3.5149022140625*^9}, {
+   3.514902422875*^9, 3.51490245828125*^9}, 3.514903148296875*^9, 
+   3.514903570109375*^9, 3.514903642328125*^9, {3.51490372234375*^9, 
+   3.514903744015625*^9}, {3.514903827421875*^9, 3.51490384165625*^9}, 
+   3.514903958546875*^9, 3.514904223609375*^9, 3.514904572328125*^9, 
+   3.514904895796875*^9, 3.5149064696875*^9, 3.514906581203125*^9, {
+   3.514906691640625*^9, 3.514906693359375*^9}, {3.51490685759375*^9, 
+   3.514906886953125*^9}, 3.51490887253125*^9, 3.514908960234375*^9, 
+   3.514909206390625*^9, 3.51490932559375*^9, {3.514909693671875*^9, 
+   3.514909709078125*^9}, 3.514909913109375*^9, 3.514909948625*^9, 
+   3.51491025675*^9, {3.514910287234375*^9, 3.514910303296875*^9}, {
+   3.514910344640625*^9, 3.51491036178125*^9}, 3.514913713234375*^9, 
+   3.51508386365625*^9, {3.51508391171875*^9, 3.515083919484375*^9}, 
+   3.515084272015625*^9, {3.515095464140625*^9, 3.51509548578125*^9}, 
+   3.51509556490625*^9, 3.515095663390625*^9, {3.515095810546875*^9, 
+   3.51509582640625*^9}, {3.515095893828125*^9, 3.51509591640625*^9}, 
+   3.51509755671875*^9, 3.5180201415625*^9, 3.51802017934375*^9, 
+   3.51802028996875*^9, 3.518020320046875*^9, {3.518020403125*^9, 
+   3.518020415609375*^9}, {3.5180204593125*^9, 3.5180204744375*^9}, 
+   3.518020545125*^9, 3.5180206254375*^9, {3.518020922046875*^9, 
+   3.518020945265625*^9}, 3.518021006921875*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"MyPolygon", "::", "objdupl"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Object name conflict, attempting to create object \
+\[NoBreak]\\!\\(MyPolygon\\)\[NoBreak][[\[NoBreak]\\!\\(b\\)\[NoBreak]]] when \
+an object named \[NoBreak]\\!\\(b\\)\[NoBreak] already exists (as an instance \
+of class \[NoBreak]\\!\\(MyPolygon\\)\[NoBreak]).\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{
+  3.515095564875*^9, 3.51509566334375*^9, {3.5150958105*^9, 
+   3.515095826359375*^9}, {3.515095893765625*^9, 3.515095916390625*^9}, 
+   3.5150975566875*^9, 3.518020141515625*^9, 3.51802017934375*^9, 
+   3.51802028996875*^9, 3.51802032003125*^9, {3.518020403078125*^9, 
+   3.518020415609375*^9}, {3.518020459296875*^9, 3.518020474390625*^9}, 
+   3.518020544890625*^9, 3.5180206254375*^9, {3.518020922*^9, 
+   3.518020945265625*^9}, 3.51802100703125*^9}],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{{3.51490220696875*^9, 3.5149022140625*^9}, {
+   3.514902422875*^9, 3.51490245828125*^9}, 3.514903148296875*^9, 
+   3.514903570109375*^9, 3.514903642328125*^9, {3.51490372234375*^9, 
+   3.514903744015625*^9}, {3.514903827421875*^9, 3.51490384165625*^9}, 
+   3.514903958546875*^9, 3.514904223609375*^9, 3.514904572328125*^9, 
+   3.514904895796875*^9, 3.5149064696875*^9, 3.514906581203125*^9, {
+   3.514906691640625*^9, 3.514906693359375*^9}, {3.51490685759375*^9, 
+   3.514906886953125*^9}, 3.51490887253125*^9, 3.514908960234375*^9, 
+   3.514909206390625*^9, 3.51490932559375*^9, {3.514909693671875*^9, 
+   3.514909709078125*^9}, 3.514909913109375*^9, 3.514909948625*^9, 
+   3.51491025675*^9, {3.514910287234375*^9, 3.514910303296875*^9}, {
+   3.514910344640625*^9, 3.51491036178125*^9}, 3.514913713234375*^9, 
+   3.51508386365625*^9, {3.51508391171875*^9, 3.515083919484375*^9}, 
+   3.515084272015625*^9, {3.515095464140625*^9, 3.51509548578125*^9}, 
+   3.51509556490625*^9, 3.515095663390625*^9, {3.515095810546875*^9, 
+   3.51509582640625*^9}, {3.515095893828125*^9, 3.51509591640625*^9}, 
+   3.51509755671875*^9, 3.5180201415625*^9, 3.51802017934375*^9, 
+   3.51802028996875*^9, 3.518020320046875*^9, {3.518020403125*^9, 
+   3.518020415609375*^9}, {3.5180204593125*^9, 3.5180204744375*^9}, 
+   3.518020545125*^9, 3.5180206254375*^9, {3.518020922046875*^9, 
+   3.518020945265625*^9}, 3.518021007078125*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"MyPolygon", "::", "objsyntax"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Cannot create object \
+\[NoBreak]\\!\\(MyPolygon\\)\[NoBreak][[\[NoBreak]\\!\\(\\\"\\\"\\)\[NoBreak]]\
+][\[NoBreak]\\!\\(\\\"4,5\\\"\\)\[NoBreak]] since given arguments do not \
+match any of the definitions for the constructor for class \
+\[NoBreak]\\!\\(MyPolygon\\)\[NoBreak].\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{
+  3.515095564875*^9, 3.51509566334375*^9, {3.5150958105*^9, 
+   3.515095826359375*^9}, {3.515095893765625*^9, 3.515095916390625*^9}, 
+   3.5150975566875*^9, 3.518020141515625*^9, 3.51802017934375*^9, 
+   3.51802028996875*^9, 3.51802032003125*^9, {3.518020403078125*^9, 
+   3.518020415609375*^9}, {3.518020459296875*^9, 3.518020474390625*^9}, 
+   3.518020544890625*^9, 3.5180206254375*^9, {3.518020922*^9, 
+   3.518020945265625*^9}, 3.518021007125*^9}],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{{3.51490220696875*^9, 3.5149022140625*^9}, {
+   3.514902422875*^9, 3.51490245828125*^9}, 3.514903148296875*^9, 
+   3.514903570109375*^9, 3.514903642328125*^9, {3.51490372234375*^9, 
+   3.514903744015625*^9}, {3.514903827421875*^9, 3.51490384165625*^9}, 
+   3.514903958546875*^9, 3.514904223609375*^9, 3.514904572328125*^9, 
+   3.514904895796875*^9, 3.5149064696875*^9, 3.514906581203125*^9, {
+   3.514906691640625*^9, 3.514906693359375*^9}, {3.51490685759375*^9, 
+   3.514906886953125*^9}, 3.51490887253125*^9, 3.514908960234375*^9, 
+   3.514909206390625*^9, 3.51490932559375*^9, {3.514909693671875*^9, 
+   3.514909709078125*^9}, 3.514909913109375*^9, 3.514909948625*^9, 
+   3.51491025675*^9, {3.514910287234375*^9, 3.514910303296875*^9}, {
+   3.514910344640625*^9, 3.51491036178125*^9}, 3.514913713234375*^9, 
+   3.51508386365625*^9, {3.51508391171875*^9, 3.515083919484375*^9}, 
+   3.515084272015625*^9, {3.515095464140625*^9, 3.51509548578125*^9}, 
+   3.51509556490625*^9, 3.515095663390625*^9, {3.515095810546875*^9, 
+   3.51509582640625*^9}, {3.515095893828125*^9, 3.51509591640625*^9}, 
+   3.51509755671875*^9, 3.5180201415625*^9, 3.51802017934375*^9, 
+   3.51802028996875*^9, 3.518020320046875*^9, {3.518020403125*^9, 
+   3.518020415609375*^9}, {3.5180204593125*^9, 3.5180204744375*^9}, 
+   3.518020545125*^9, 3.5180206254375*^9, {3.518020922046875*^9, 
+   3.518020945265625*^9}, 3.51802100715625*^9}]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Method validation", "Subsection",
+ CellChangeTimes->{{3.51509680128125*^9, 3.5150968039375*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"MyPolygon", "\[LeftDoubleBracket]", "a", "\[RightDoubleBracket]"}],
+   "[", "4", "]"}]], "Input",
+ CellChangeTimes->{{3.51490220240625*^9, 3.51490221371875*^9}, {
+  3.518020810171875*^9, 3.518020812796875*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Object", "[", "a", "]"}]], "Output",
+ CellChangeTimes->{{3.51490220696875*^9, 3.5149022140625*^9}, {
+   3.514902422875*^9, 3.51490245828125*^9}, 3.514903148296875*^9, 
+   3.514903570109375*^9, 3.514903642328125*^9, {3.51490372234375*^9, 
+   3.514903744015625*^9}, {3.514903827421875*^9, 3.51490384165625*^9}, 
+   3.514903958546875*^9, 3.514904223609375*^9, 3.514904572328125*^9, 
+   3.514904895796875*^9, 3.5149064696875*^9, 3.514906581203125*^9, {
+   3.514906691640625*^9, 3.514906693359375*^9}, {3.51490685759375*^9, 
+   3.514906886953125*^9}, 3.51490887253125*^9, 3.514908960234375*^9, 
+   3.514909206390625*^9, 3.51490932559375*^9, {3.514909693671875*^9, 
+   3.514909709078125*^9}, 3.514909913109375*^9, 3.514909948625*^9, 
+   3.51491025675*^9, {3.514910287234375*^9, 3.514910303296875*^9}, {
+   3.514910344640625*^9, 3.51491036178125*^9}, 3.514913713234375*^9, 
+   3.51508386365625*^9, {3.51508391171875*^9, 3.515083919484375*^9}, 
+   3.515084272015625*^9, 3.515095464140625*^9, 3.51509565840625*^9, 
+   3.51509596540625*^9, 3.51509606203125*^9, 3.5150962186875*^9, 
+   3.51509671975*^9, 3.51509717853125*^9, 3.5150972246875*^9, 
+   3.5150974381875*^9, 3.51509748796875*^9, {3.515097536171875*^9, 
+   3.515097544484375*^9}, 3.515097603234375*^9, 3.51516142878125*^9, {
+   3.51516163575*^9, 3.51516165409375*^9}, 3.51516332065625*^9, 
+   3.51516349728125*^9, 3.5151635839375*^9, 3.515163637578125*^9, 
+   3.518020814703125*^9}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Object", "[", "x", "]"}], "@", 
+  RowBox[{"f", "[", "]"}]}]], "Input",
+ CellChangeTimes->{{3.51509681271875*^9, 3.515096816484375*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Object", "::", "objaccess"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Cannot complete method call \[NoBreak]\\!\\(Object[x]\\)\
+\[NoBreak]@\[NoBreak]\\!\\(f\\)\[NoBreak][\[NoBreak]\\!\\(\\\"\\\"\\)\
+\[NoBreak]] since object does not exist.\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{
+  3.515096816859375*^9, 3.51509713525*^9, 3.51509762115625*^9, {
+   3.51516362246875*^9, 3.515163638296875*^9}, 3.51802081803125*^9}],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{
+  3.51509681690625*^9, 3.51509713525*^9, 3.5150976211875*^9, {3.5151636225*^9,
+    3.515163638328125*^9}, 3.518020818078125*^9}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Object", "[", "a", "]"}], "@", 
+  RowBox[{"g", "[", "]"}]}]], "Input",
+ CellChangeTimes->{{3.515083934453125*^9, 3.515083934765625*^9}, 
+   3.515096676015625*^9, 3.515096716453125*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"MyPolygon", "::", "objmethod"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Cannot complete method call \[NoBreak]\\!\\(Object[a]\\)\
+\[NoBreak]@\[NoBreak]\\!\\(g\\)\[NoBreak][\[NoBreak]\\!\\(\\\"\\\"\\)\
+\[NoBreak]] since no method named \[NoBreak]\\!\\(g\\)\[NoBreak] is defined \
+for class \[NoBreak]\\!\\(MyPolygon\\)\[NoBreak].\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.515083935375*^9, 3.515083954875*^9}, 3.5150839993125*^9,
+    3.515095967640625*^9, {3.515096049359375*^9, 3.51509606509375*^9}, {
+   3.515096213375*^9, 3.515096221953125*^9}, 3.515096283546875*^9, 
+   3.515096327328125*^9, 3.5150963711875*^9, 3.515096495203125*^9, {
+   3.5150965916875*^9, 3.515096610234375*^9}, 3.5150966764375*^9, {
+   3.51509671015625*^9, 3.515096725046875*^9}, {3.515097105359375*^9, 
+   3.5150971256875*^9}, 3.515097191*^9, 3.515097231359375*^9, 
+   3.51509756784375*^9, 3.515097610984375*^9, {3.51516362475*^9, 
+   3.515163639828125*^9}, 3.51802083803125*^9}],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{{3.515083935421875*^9, 3.515083954875*^9}, 
+   3.51508399934375*^9, 3.5150959676875*^9, {3.51509604940625*^9, 
+   3.515096065125*^9}, {3.515096213421875*^9, 3.515096222*^9}, 
+   3.51509628359375*^9, 3.515096327375*^9, 3.515096371265625*^9, 
+   3.51509649525*^9, {3.51509659171875*^9, 3.51509661028125*^9}, 
+   3.51509667646875*^9, {3.515096710203125*^9, 3.515096725046875*^9}, {
+   3.51509710540625*^9, 3.51509712571875*^9}, 3.515097191*^9, 
+   3.515097231390625*^9, 3.515097567859375*^9, 3.515097611015625*^9, {
+   3.51516362478125*^9, 3.515163639859375*^9}, 3.518020838046875*^9}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Object", "[", "a", "]"}], "@", 
+  RowBox[{"f", "[", 
+   RowBox[{"1", ",", "2", ",", "3", ",", "4", ",", "5"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.51509683925*^9, 3.515096841703125*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"MyPolygon", "::", "objmethodsyntax"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Cannot complete method call \[NoBreak]\\!\\(Object[a]\\)\
+\[NoBreak]@\[NoBreak]\\!\\(f\\)\[NoBreak][\[NoBreak]\\!\\(\\\"1,2,3,4,5\\\"\\)\
+\[NoBreak]] since given arguments do not match any of the definitions for \
+method \[NoBreak]\\!\\(f\\)\[NoBreak].\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{
+  3.515097140125*^9, {3.515097171625*^9, 3.515097181390625*^9}, 
+   3.5150972299375*^9, 3.515097430921875*^9, 3.515097560859375*^9, 
+   3.515097606484375*^9, 3.51509768465625*^9, {3.515163626203125*^9, 
+   3.51516364325*^9}, 3.5180208474375*^9}],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{
+  3.515096842125*^9, 3.515097140171875*^9, {3.51509717165625*^9, 
+   3.515097181453125*^9}, 3.515097229984375*^9, 3.51509743096875*^9, 
+   3.51509756090625*^9, 3.51509760653125*^9, 3.515097684703125*^9, {
+   3.515163626234375*^9, 3.51516364328125*^9}, 3.51802084746875*^9}]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Unnamed object", "Subsection",
+ CellChangeTimes->{{3.51490722653125*^9, 3.514907229296875*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MyPolygon", "[", "5", "]"}]], "Input",
+ CellChangeTimes->{{3.514907148859375*^9, 3.51490715221875*^9}, 
+   3.518021022703125*^9}],
+
+Cell[BoxData[
+ RowBox[{"Object", "[", "Object$6", "]"}]], "Output",
+ CellChangeTimes->{3.514907153046875*^9, 3.51490721665625*^9, 
+  3.51490725725*^9, 3.514913758265625*^9, 3.5150842296875*^9, 
+  3.51802102303125*^9}]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Existence validation", "Subsection",
+ CellChangeTimes->{{3.51491223684375*^9, 3.514912239765625*^9}}],
+
+Cell["Double creation", "Text",
+ CellChangeTimes->{{3.514912672953125*^9, 3.514912676453125*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"MyPolygon", "\[LeftDoubleBracket]", "a", "\[RightDoubleBracket]"}],
+   "[", "4", "]"}], "\n", 
+ RowBox[{
+  RowBox[{"MyPolygon", "\[LeftDoubleBracket]", "a", "\[RightDoubleBracket]"}],
+   "[", "4", "]"}]}], "Input",
+ CellChangeTimes->{
+  3.5149122531875*^9, {3.518021033703125*^9, 3.518021042296875*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Object", "[", "a", "]"}]], "Output",
+ CellChangeTimes->{{3.514912241609375*^9, 3.51491224809375*^9}, 
+   3.514912298828125*^9, 3.51491238678125*^9, {3.5149127186875*^9, 
+   3.5149127231875*^9}, {3.51491276196875*^9, 3.514912765796875*^9}, 
+   3.5149137998125*^9, 3.5150843065625*^9, 3.51802104634375*^9, {
+   3.518021158265625*^9, 3.518021182578125*^9}, 3.518021232546875*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"MyPolygon", "::", "objdupl"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Cannot create object \
+\[NoBreak]\\!\\(MyPolygon\\)\[NoBreak][[\[NoBreak]\\!\\(a\\)\[NoBreak]]], \
+since an object named \\\"\[NoBreak]\\!\\(a\\)\[NoBreak]\\\" already exists \
+(as an instance of class \[NoBreak]\\!\\(MyPolygon\\)\[NoBreak]).\"\>"}]], \
+"Message", "MSG",
+ CellChangeTimes->{
+  3.5149122480625*^9, 3.514912298859375*^9, 3.5149123868125*^9, {
+   3.514912718640625*^9, 3.514912723234375*^9}, {3.514912761921875*^9, 
+   3.51491276584375*^9}, 3.514913799921875*^9, 3.515084306640625*^9, 
+   3.518021046390625*^9, {3.51802115825*^9, 3.518021182625*^9}, 
+   3.518021232953125*^9}],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{{3.514912241609375*^9, 3.51491224809375*^9}, 
+   3.514912298828125*^9, 3.51491238678125*^9, {3.5149127186875*^9, 
+   3.5149127231875*^9}, {3.51491276196875*^9, 3.514912765796875*^9}, 
+   3.5149137998125*^9, 3.5150843065625*^9, 3.51802104634375*^9, {
+   3.518021158265625*^9, 3.518021182578125*^9}, 3.518021232953125*^9}]
+}, Closed]],
+
+Cell["\<\
+Double destruction -- quietly ignored\
+\>", "Text",
+ CellChangeTimes->{{3.51491268009375*^9, 3.5149126825625*^9}, {
+  3.518021243703125*^9, 3.5180212615*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"Destroy", "[", 
+  RowBox[{"Object", "[", "a", "]"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Destroy", "[", 
+  RowBox[{"Object", "[", "a", "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.51491226121875*^9, 3.5149122655625*^9}, {
+  3.5150843091875*^9, 3.5150843150625*^9}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Scoping", "Subsection",
+ CellChangeTimes->{{3.514912216421875*^9, 3.514912217453125*^9}}],
+
+Cell["Before", "Text",
+ CellChangeTimes->{{3.515084408296875*^9, 3.5150844089375*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"MyPolygon", "\[LeftDoubleBracket]", "a", "\[RightDoubleBracket]"}],
+   "[", "4", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", "$ObjectRegistry", "]"}]}], "Input",
+ CellChangeTimes->{{3.514912419796875*^9, 3.514912432375*^9}, {
+  3.5150843485*^9, 3.51508434878125*^9}, {3.515084467515625*^9, 
+  3.515084468046875*^9}, {3.518021293296875*^9, 3.51802129546875*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Object", "[", "a", "]"}]], "Output",
+ CellChangeTimes->{
+  3.5149124655625*^9, 3.514912795609375*^9, {3.5149128439375*^9, 
+   3.514912860265625*^9}, {3.514913827453125*^9, 3.51491384453125*^9}, 
+   3.5150843494375*^9, {3.515084469046875*^9, 3.5150844874375*^9}, 
+   3.51802129840625*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"Object", "[", "a", "]"}], "}"}]], "Print",
+ CellChangeTimes->{{3.515084469078125*^9, 3.515084487484375*^9}, 
+   3.51802129840625*^9}]
+}, Closed]],
+
+Cell["During", "Text",
+ CellChangeTimes->{{3.515084411015625*^9, 3.515084411859375*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ScopeObjects", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+    "MyPolygon", "\[LeftDoubleBracket]", "b", "\[RightDoubleBracket]"}], "[", 
+    "4", "]"}], ";", "\[IndentingNewLine]", 
+   RowBox[{"ShowObjectInformation", "[", 
+    RowBox[{"Object", "[", "b", "]"}], "]"}], ";", "\[IndentingNewLine]", 
+   RowBox[{"Print", "[", "$ObjectRegistry", "]"}]}], "\[IndentingNewLine]", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.514912434875*^9, 3.51491248690625*^9}, 
+   3.5149136955625*^9, {3.515084358421875*^9, 3.515084383296875*^9}, {
+   3.515084440484375*^9, 3.515084450578125*^9}, {3.518021301234375*^9, 
+   3.51802133321875*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Object name: \"\>", "\[InvisibleSpace]", "b"}],
+  SequenceForm["Object name: ", $CellContext`b],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.5150843835625*^9, 3.515084444921875*^9, {3.51802131321875*^9, 
+   3.518021333921875*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"  \"\>", "\[InvisibleSpace]", "\<\"Instance identifier: \"\>", 
+   "\[InvisibleSpace]", "Instance$6"}],
+  SequenceForm[
+  "  ", "Instance identifier: ", MathObject`InstanceData`Instance$6],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.5150843835625*^9, 3.515084444921875*^9, {3.51802131321875*^9, 
+   3.518021333921875*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"  \"\>", "\[InvisibleSpace]", "\<\"Class: \"\>", 
+   "\[InvisibleSpace]", "MyPolygon"}],
+  SequenceForm["  ", "Class: ", $CellContext`MyPolygon],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.5150843835625*^9, 3.515084444921875*^9, {3.51802131321875*^9, 
+   3.5180213339375*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"  \"\>", "\[InvisibleSpace]", 
+   InterpretationBox[
+    StyleBox[
+     RowBox[{"{", 
+      RowBox[{"MyPolygon$n", " ", "->", " ", "4"}], "}"}],
+     ShowStringCharacters->True,
+     NumberMarks->True],
+    InputForm[{MathObject`InstanceData`MyPolygon$n -> 4}],
+    AutoDelete->True,
+    Editable->True]}],
+  SequenceForm["  ", 
+   InputForm[{MathObject`InstanceData`MyPolygon$n -> 4}]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.5150843835625*^9, 3.515084444921875*^9, {3.51802131321875*^9, 
+   3.518021333984375*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"Object", "[", "a", "]"}], ",", 
+   RowBox[{"Object", "[", "b", "]"}]}], "}"}]], "Print",
+ CellChangeTimes->{
+  3.5150843835625*^9, 3.515084444921875*^9, {3.51802131321875*^9, 
+   3.518021334046875*^9}}]
+}, Closed]]
+}, Closed]],
+
+Cell["After", "Text",
+ CellChangeTimes->{{3.515084414453125*^9, 3.51508441496875*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ShowObjectInformation", "[", 
+   RowBox[{"Object", "[", "b", "]"}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", "$ObjectRegistry", "]"}]}], "Input",
+ CellChangeTimes->{3.515084461296875*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Object name: \"\>", "\[InvisibleSpace]", "b"}],
+  SequenceForm["Object name: ", $CellContext`b],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.51508442759375*^9, 3.515084461890625*^9, 
+  3.518021340078125*^9}],
+
+Cell[BoxData["\<\"Object not defined.\"\>"], "Print",
+ CellChangeTimes->{3.51508442759375*^9, 3.515084461890625*^9, 
+  3.51802134009375*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"Object", "[", "a", "]"}], "}"}]], "Print",
+ CellChangeTimes->{3.51508442759375*^9, 3.515084461890625*^9, 
+  3.51802134009375*^9}]
+}, Closed]]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["And check robustness against abort...", "Subsection",
+ CellChangeTimes->{{3.514912580953125*^9, 3.51491258853125*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ScopeObjects", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+     "MyPolygon", "\[LeftDoubleBracket]", "b", "\[RightDoubleBracket]"}], "[",
+      "4", "]"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"ShowObjectInformation", "[", 
+     RowBox[{"Object", "[", "b", "]"}], "]"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Print", "[", "$ObjectRegistry", "]"}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Abort", "[", "]"}]}], "\[IndentingNewLine]", "]"}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.514912565890625*^9, 3.51491256828125*^9}, 
+   3.51491369778125*^9, {3.515084511890625*^9, 3.51508451975*^9}, 
+   3.515176347203125*^9, {3.5180213481875*^9, 3.5180213503125*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Object name: \"\>", "\[InvisibleSpace]", "b"}],
+  SequenceForm["Object name: ", $CellContext`b],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.515176348125*^9, 3.515176360125*^9}, 3.5180213583125*^9}
+  ],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"  \"\>", "\[InvisibleSpace]", "\<\"Instance identifier: \"\>", 
+   "\[InvisibleSpace]", "Instance$7"}],
+  SequenceForm[
+  "  ", "Instance identifier: ", MathObject`InstanceData`Instance$7],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.515176348125*^9, 3.515176360125*^9}, 
+   3.518021358359375*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"  \"\>", "\[InvisibleSpace]", "\<\"Class: \"\>", 
+   "\[InvisibleSpace]", "MyPolygon"}],
+  SequenceForm["  ", "Class: ", $CellContext`MyPolygon],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.515176348125*^9, 3.515176360125*^9}, 
+   3.51802135840625*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"  \"\>", "\[InvisibleSpace]", 
+   InterpretationBox[
+    StyleBox[
+     RowBox[{"{", 
+      RowBox[{"MyPolygon$n", " ", "->", " ", "4"}], "}"}],
+     ShowStringCharacters->True,
+     NumberMarks->True],
+    InputForm[{MathObject`InstanceData`MyPolygon$n -> 4}],
+    AutoDelete->True,
+    Editable->True]}],
+  SequenceForm["  ", 
+   InputForm[{MathObject`InstanceData`MyPolygon$n -> 4}]],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.515176348125*^9, 3.515176360125*^9}, 
+   3.518021358421875*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"Object", "[", "a", "]"}], ",", 
+   RowBox[{"Object", "[", "b", "]"}]}], "}"}]], "Print",
+ CellChangeTimes->{{3.515176348125*^9, 3.515176360125*^9}, 
+   3.51802135846875*^9}]
+}, Closed]],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellChangeTimes->{{3.51517634834375*^9, 3.515176360328125*^9}, 
+   3.51802135853125*^9}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Print", "[", "$ObjectRegistry", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.514912565890625*^9, 3.51491256828125*^9}, 
+   3.51491369778125*^9, {3.515084511890625*^9, 3.51508451975*^9}, 
+   3.515176347203125*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"Object", "[", "a", "]"}], "}"}]], "Print",
+ CellChangeTimes->{
+  3.514912568703125*^9, 3.51491282065625*^9, 3.514912867484375*^9, 
+   3.514913853390625*^9, 3.515084520203125*^9, {3.515176319671875*^9, 
+   3.5151763491875*^9}, 3.518021360015625*^9}]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Inheritance", "Subsection",
+ CellChangeTimes->{{3.515084527359375*^9, 3.515084528828125*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"DeclareClass", "[", 
+   RowBox[{"MyLocalizedPolygon", ",", "MyPolygon", ",", 
+    RowBox[{"{", "\"\<P\>\"", "}"}], ",", 
+    RowBox[{"{", "\"\<g\>\"", "}"}]}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.51508454646875*^9, 3.515084563390625*^9}, {
+  3.51508463759375*^9, 3.51508465390625*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Definition", "[", "\[NoBreak]", "MathObject`Private`ClassParent", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Definition", "[", "\[NoBreak]", 
+  "MathObject`Private`ClassDataMemberNames", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Definition", "[", "\[NoBreak]", 
+  "MathObject`Private`ClassMethodNames", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Definition", "[", "\[NoBreak]", "MathObject`Private`ClassMethods", 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.515084585140625*^9, 3.515084599609375*^9}, {
+  3.5150846483125*^9, 3.515084696671875*^9}, {3.5150847315625*^9, 
+  3.515084733984375*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{
+         RowBox[{
+         "MathObject`Private`ClassParent", "[", "MyLocalizedPolygon", "]"}], 
+         "=", "MyPolygon"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"MathObject`Private`ClassParent", "[", "MyPolygon", "]"}], 
+         "=", "None"}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[MathObject`Private`ClassParent],
+  Editable->False]], "Output",
+ CellChangeTimes->{{3.515084589671875*^9, 3.5150846001875*^9}, {
+   3.51508464484375*^9, 3.515084696953125*^9}, 3.515084734484375*^9, 
+   3.51802137825*^9}],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{
+         RowBox[{
+         "MathObject`Private`ClassDataMemberNames", "[", "MyLocalizedPolygon",
+           "]"}], "=", 
+         RowBox[{"{", 
+          RowBox[{"\<\"P\"\>", ",", "\<\"n\"\>"}], "}"}]}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{
+         "MathObject`Private`ClassDataMemberNames", "[", "MyPolygon", "]"}], 
+         "=", 
+         RowBox[{"{", "\<\"n\"\>", "}"}]}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[MathObject`Private`ClassDataMemberNames],
+  Editable->False]], "Output",
+ CellChangeTimes->{{3.515084589671875*^9, 3.5150846001875*^9}, {
+   3.51508464484375*^9, 3.515084696953125*^9}, 3.515084734484375*^9, 
+   3.51802137828125*^9}],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{
+         RowBox[{
+         "MathObject`Private`ClassMethodNames", "[", "MyLocalizedPolygon", 
+          "]"}], "=", 
+         RowBox[{"{", 
+          RowBox[{"\<\"g\"\>", ",", "\<\"f\"\>"}], "}"}]}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{
+         "MathObject`Private`ClassMethodNames", "[", "MyPolygon", "]"}], "=", 
+         
+         RowBox[{"{", "\<\"f\"\>", "}"}]}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[MathObject`Private`ClassMethodNames],
+  Editable->False]], "Output",
+ CellChangeTimes->{{3.515084589671875*^9, 3.5150846001875*^9}, {
+   3.51508464484375*^9, 3.515084696953125*^9}, 3.515084734484375*^9, 
+   3.518021378390625*^9}],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{
+         RowBox[{
+         "MathObject`Private`ClassMethods", "[", "MyLocalizedPolygon", "]"}], 
+         "=", 
+         RowBox[{"{", 
+          RowBox[{
+          "SetP", ",", "GetP", ",", "Setn", ",", "Getn", ",", "g", ",", "f"}],
+           "}"}]}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"MathObject`Private`ClassMethods", "[", "MyPolygon", "]"}], 
+         "=", 
+         RowBox[{"{", 
+          RowBox[{"Setn", ",", "Getn", ",", "f"}], "}"}]}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[MathObject`Private`ClassMethods],
+  Editable->False]], "Output",
+ CellChangeTimes->{{3.515084589671875*^9, 3.5150846001875*^9}, {
+   3.51508464484375*^9, 3.515084696953125*^9}, 3.515084734484375*^9, 
+   3.5180213784375*^9}]
+}, Closed]],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Destroy", "[", 
+    RowBox[{"Object", "[", "a", "]"}], "]"}], "\[IndentingNewLine]", 
+   RowBox[{"Destroy", "[", 
+    RowBox[{"Object", "[", "b", "]"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.518103461015625*^9, 3.518103469890625*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"MyPolygon", "[", 
+   RowBox[{"[", "a", "]"}], "]"}], "[", "1", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"MyPolygon", "[", 
+   RowBox[{"[", "b", "]"}], "]"}], "[", "2", "]"}]}], "Input",
+ CellChangeTimes->{{3.518103390828125*^9, 3.5181034171875*^9}, {
+  3.51810345390625*^9, 3.518103454109375*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Object", "[", "a", "]"}]], "Output",
+ CellChangeTimes->{{3.51810340646875*^9, 3.518103417671875*^9}, {
+  3.518103456875*^9, 3.51810347384375*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Object", "[", "b", "]"}]], "Output",
+ CellChangeTimes->{{3.51810340646875*^9, 3.518103417671875*^9}, {
+  3.518103456875*^9, 3.518103473875*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"SetObjectData", "[", 
+  RowBox[{
+   RowBox[{"Object", "[", "a", "]"}], ",", 
+   RowBox[{"Object", "[", "b", "]"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ShowObjectInformation", "[", 
+  RowBox[{"Object", "[", "a", "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.518103477125*^9, 3.5181035569375*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Object name: \"\>", "\[InvisibleSpace]", "a"}],
+  SequenceForm["Object name: ", $CellContext`a],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.5181035416875*^9, 3.5181035574375*^9}, 
+   3.518103592890625*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"  \"\>", "\[InvisibleSpace]", "\<\"Instance identifier: \"\>", 
+   "\[InvisibleSpace]", "Instance$681"}],
+  SequenceForm[
+  "  ", "Instance identifier: ", MathObject`InstanceData`Instance$681],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.5181035416875*^9, 3.5181035574375*^9}, 
+   3.51810359290625*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"  \"\>", "\[InvisibleSpace]", "\<\"Class: \"\>", 
+   "\[InvisibleSpace]", "MyPolygon"}],
+  SequenceForm["  ", "Class: ", $CellContext`MyPolygon],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.5181035416875*^9, 3.5181035574375*^9}, 
+   3.51810359290625*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"  \"\>", "\[InvisibleSpace]", 
+   InterpretationBox[
+    StyleBox[
+     RowBox[{"{", 
+      RowBox[{"MyPolygon$n", " ", "->", " ", "2"}], "}"}],
+     ShowStringCharacters->True,
+     NumberMarks->True],
+    InputForm[{MathObject`InstanceData`MyPolygon$n -> 2}],
+    AutoDelete->True,
+    Editable->True]}],
+  SequenceForm["  ", 
+   InputForm[{MathObject`InstanceData`MyPolygon$n -> 2}]],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.5181035416875*^9, 3.5181035574375*^9}, 
+   3.518103592921875*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Ancestry and object pattern", "Subsection",
+ CellChangeTimes->{{3.515436290375375*^9, 3.515436306469125*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"DeclareClass", "[", 
+   RowBox[{"a", ",", 
+    RowBox[{"{", "}"}], ",", 
+    RowBox[{"{", "}"}]}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DeclareClass", "[", 
+   RowBox[{"b", ",", "a", ",", 
+    RowBox[{"{", "}"}], ",", 
+    RowBox[{"{", "}"}]}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DeclareClass", "[", 
+   RowBox[{"c", ",", "b", ",", 
+    RowBox[{"{", "}"}], ",", 
+    RowBox[{"{", "}"}]}], "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.51543386392225*^9, 3.515433885500375*^9}, 
+   3.515435153187875*^9}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Constructor", "[", 
+     RowBox[{
+      RowBox[{"Class", ":", "a"}], ",", "Self_Object"}], "]"}], "[", "]"}], ":=",
+    "Null"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Constructor", "[", 
+     RowBox[{
+      RowBox[{"Class", ":", "b"}], ",", "Self_Object"}], "]"}], "[", "]"}], ":=",
+    "Null"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Constructor", "[", 
+     RowBox[{
+      RowBox[{"Class", ":", "c"}], ",", "Self_Object"}], "]"}], "[", "]"}], ":=",
+    "Null"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.51543526942225*^9, 3.51543531829725*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ObjectPattern", "[", "a", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ObjectPattern", "[", "b", "]"}]}], "Input",
+ CellChangeTimes->{{3.51543502117225*^9, 3.515435031266*^9}, {
+   3.515435115031625*^9, 3.515435115531625*^9}, 3.51543515323475*^9, {
+   3.515435479781625*^9, 3.51543548217225*^9}}],
+
+Cell[BoxData[
+ RowBox[{"_Object", "?", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"ObjectExistsQ", "[", "#1", "]"}], "&&", 
+     RowBox[{"MemberQ", "[", 
+      RowBox[{
+       RowBox[{"ClassAncestry", "[", 
+        RowBox[{"ObjectClass", "[", "#1", "]"}], "]"}], ",", "a"}], "]"}]}], 
+    "&"}], ")"}]}]], "Output",
+ CellChangeTimes->{
+  3.51543516148475*^9, 3.515435253969125*^9, 3.5154353207035*^9, 
+   3.515435482516*^9, {3.515435876062875*^9, 3.515435906391*^9}, 
+   3.515435941437875*^9, {3.515435974594125*^9, 3.515436004437875*^9}, 
+   3.515436061266*^9, 3.518021414546875*^9}],
+
+Cell[BoxData[
+ RowBox[{"_Object", "?", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"ObjectExistsQ", "[", "#1", "]"}], "&&", 
+     RowBox[{"MemberQ", "[", 
+      RowBox[{
+       RowBox[{"ClassAncestry", "[", 
+        RowBox[{"ObjectClass", "[", "#1", "]"}], "]"}], ",", "b"}], "]"}]}], 
+    "&"}], ")"}]}]], "Output",
+ CellChangeTimes->{
+  3.51543516148475*^9, 3.515435253969125*^9, 3.5154353207035*^9, 
+   3.515435482516*^9, {3.515435876062875*^9, 3.515435906391*^9}, 
+   3.515435941437875*^9, {3.515435974594125*^9, 3.515436004437875*^9}, 
+   3.515436061266*^9, 3.51802141459375*^9}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ClassAncestry", "[", "a", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ClassAncestry", "[", "b", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ClassAncestry", "[", "c", "]"}]}], "Input",
+ CellChangeTimes->{{3.515435987562875*^9, 3.515436011875375*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", "a", "}"}]], "Output",
+ CellChangeTimes->{{3.515435991469125*^9, 3.515436012125375*^9}, 
+   3.518021418015625*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"a", ",", "b"}], "}"}]], "Output",
+ CellChangeTimes->{{3.515435991469125*^9, 3.515436012125375*^9}, 
+   3.5180214180625*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"a", ",", "b", ",", "c"}], "}"}]], "Output",
+ CellChangeTimes->{{3.515435991469125*^9, 3.515436012125375*^9}, 
+   3.5180214180625*^9}]
+}, Closed]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"a", "\[LeftDoubleBracket]", "aa", "\[RightDoubleBracket]"}], "[", 
+   "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"b", "\[LeftDoubleBracket]", "bb", "\[RightDoubleBracket]"}], "[", 
+   "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"c", "\[LeftDoubleBracket]", "cc", "\[RightDoubleBracket]"}], "[", 
+   "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.515435259437875*^9, 3.51543526167225*^9}, {
+  3.515435326906625*^9, 3.515435346391*^9}, {3.518021420984375*^9, 
+  3.518021430875*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"MatchQ", "[", 
+     RowBox[{
+      RowBox[{"Object", "[", "name", "]"}], ",", 
+      RowBox[{"ObjectPattern", "[", "class", "]"}]}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"name", ",", 
+      RowBox[{"{", 
+       RowBox[{"aa", ",", "bb", ",", "cc"}], "}"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"class", ",", 
+      RowBox[{"{", 
+       RowBox[{"a", ",", "b", ",", "c"}], "}"}]}], "}"}]}], "]"}], "//", 
+  "TableForm"}]], "Input",
+ CellChangeTimes->{{3.515434097719125*^9, 3.51543410010975*^9}, {
+   3.515434983016*^9, 3.5154349975785*^9}, 3.515435153250375*^9, {
+   3.51543536848475*^9, 3.5154354524535*^9}, {3.518021443515625*^9, 
+   3.518021513390625*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"True", "False", "False"},
+    {"True", "True", "False"},
+    {"True", "True", "True"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.51543542217225*^9, 3.5154354527035*^9}, {
+   3.51543607260975*^9, 3.51543609954725*^9}, 3.51543615673475*^9, {
+   3.51802150315625*^9, 3.51802151378125*^9}}]
+}, Closed]]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["General tests", "Section",
+ CellChangeTimes->{{3.518021532578125*^9, 3.518021534234375*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Object constructor notation tests\
+\>", "Subsection",
+ CellChangeTimes->{{3.517673530546875*^9, 3.517673536671875*^9}, {
+  3.5180146703125*^9, 3.51801467415625*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "/:", 
+   RowBox[{
+    RowBox[{"f", "[", 
+     RowBox[{"[", "i_", "]"}], "]"}], "[", "j___", "]"}], ":=", 
+   RowBox[{"ff", "[", 
+    RowBox[{"i", ",", "j"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.51776530253125*^9, 3.517765345515625*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Part", "::", "pspec"}], "MessageName"], ":", 
+  " ", "\<\"Part specification \[NoBreak]\\!\\(i_\\)\[NoBreak] is neither an \
+integer nor a list of integers. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/pspec\\\", ButtonNote -> \
+\\\"Part::pspec\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.517765320453125*^9, 3.517765345859375*^9}, 
+   3.5177653918125*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"TagSetDelayed", "::", "tagpos"}], "MessageName"], ":", 
+  " ", "\<\"Tag \[NoBreak]\\!\\(f\\)\[NoBreak] in \[NoBreak]\\!\\(\\(\\(f \
+\[LeftDoubleBracket] i_ \[RightDoubleBracket]\\)\\)[j___]\\)\[NoBreak] is too \
+deep for an assigned rule to be found. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/TagSetDelayed/tagpos\\\", ButtonNote -> \\\
+\"TagSetDelayed::tagpos\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.517765320453125*^9, 3.517765345859375*^9}, 
+   3.51776539203125*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "/:", 
+   RowBox[{"f", "[", 
+    RowBox[{"[", "i_", "]"}], "]"}], ":=", 
+   RowBox[{"FunctionTag", "[", 
+    RowBox[{"f", ",", "i"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.51776545553125*^9, 3.5177655119375*^9}, {
+  3.517765910078125*^9, 3.517765922421875*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"FunctionTag", "[", 
+    RowBox[{"f_", ",", "i_"}], "]"}], "[", "j___", "]"}], ":=", 
+  RowBox[{"ff", "[", 
+   RowBox[{"f", ",", "i", ",", "j"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.51776545553125*^9, 3.5177655119375*^9}, {
+  3.517765910078125*^9, 3.517765976765625*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "[", 
+   RowBox[{"[", "i", "]"}], "]"}], "[", "j", "]"}]], "Input",
+ CellChangeTimes->{{3.517765467546875*^9, 3.517765476140625*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ObjectConstructorTag", "[", 
+   RowBox[{"f", ",", "i"}], "]"}], "[", "j", "]"}]], "Output",
+ CellChangeTimes->{{3.51776547665625*^9, 3.51776548425*^9}, 
+   3.517765515171875*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "[", 
+   RowBox[{"[", "3", "]"}], "]"}], "[", 
+  RowBox[{"1", ",", "2"}], "]"}]], "Input",
+ CellChangeTimes->{{3.51767322509375*^9, 3.517673230359375*^9}}],
+
+Cell["Angle brackets", "Text",
+ CellChangeTimes->{{3.517765406078125*^9, 3.517765408484375*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "/:", 
+   RowBox[{"f", 
+    RowBox[{
+     RowBox[{"\[LeftAngleBracket]", "i_", "\[RightAngleBracket]"}], "[", "j_",
+      "]"}]}], ":=", 
+   RowBox[{"ff", "[", 
+    RowBox[{"i", ",", "j"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.51767323865625*^9, 3.51767327553125*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"f", 
+  RowBox[{
+   RowBox[{"\[LeftAngleBracket]", "1", "\[RightAngleBracket]"}], "[", "2", 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.517673277140625*^9, 3.517673283875*^9}}],
+
+Cell[BoxData[
+ RowBox[{"ff", "[", 
+  RowBox[{"1", ",", "2"}], "]"}]], "Output",
+ CellChangeTimes->{3.517673284484375*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"g", 
+   RowBox[{
+    RowBox[{"\[LeftAngleBracket]", "1", "\[RightAngleBracket]"}], "[", "2", 
+    "]"}]}], "//", "FullForm"}]], "Input",
+ CellChangeTimes->{{3.517673301828125*^9, 3.517673316828125*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   RowBox[{"Times", "[", 
+    RowBox[{"g", ",", 
+     RowBox[{
+      RowBox[{"AngleBracket", "[", "1", "]"}], "[", "2", "]"}]}], "]"}],
+   ShowSpecialCharacters->False,
+   ShowStringCharacters->True,
+   NumberMarks->True],
+  FullForm]], "Output",
+ CellChangeTimes->{{3.51767330915625*^9, 3.517673317109375*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"h", "/:", 
+   RowBox[{"h", 
+    RowBox[{
+     RowBox[{"\[LeftAngleBracket]", "i_", "\[RightAngleBracket]"}], "[", 
+     "j___", "]"}]}], ":=", 
+   RowBox[{"hh", "[", 
+    RowBox[{"i", ",", "j"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.517765724265625*^9, 3.517765787109375*^9}, {
+  3.5177658254375*^9, 3.517765846390625*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"h", 
+  RowBox[{
+   RowBox[{"\[LeftAngleBracket]", "1", "\[RightAngleBracket]"}], "[", 
+   RowBox[{"2", ",", "3"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.517765832296875*^9, 3.517765850890625*^9}}],
+
+Cell[BoxData[
+ RowBox[{"hh", "[", 
+  RowBox[{"1", ",", "2", ",", "3"}], "]"}]], "Output",
+ CellChangeTimes->{{3.517765835125*^9, 3.51776585128125*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "AngleBracket"}]], "Input",
+ CellChangeTimes->{{3.517673325171875*^9, 3.517673328109375*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\\!\\(\\*RowBox[{\\\"AngleBracket\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"y\\\", \
+\\\"TI\\\"], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"]}], \
+\\\"]\\\"}]\\) displays as \\!\\(\\*RowBox[{\\\"\[LeftAngleBracket]\\\", \
+RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"y\\\", \
+\\\"TI\\\"], \\\",\\\", \\\"\[Ellipsis]\\\"}], \\\"\[RightAngleBracket]\\\"}]\
+\\).\"\>", "MSG"], "\[NonBreakingSpace]", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/AngleBracket"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.517673330734375*^9},
+ CellTags->"Info3517658930-5762677"]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"FigArrow", "[", 
+   RowBox[{"[", "a1", "]"}], "]"}], "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "2"}], "}"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"FigArrow", 
+  RowBox[{
+   RowBox[{"\[LeftAngleBracket]", "a1", "\[RightAngleBracket]"}], "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"1", ",", "1"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"2", ",", "2"}], "}"}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.51767341790625*^9, 3.517673446796875*^9}}],
+
+Cell["\<\
+\[LeftAngleBracket] is entered as Esc-<-Esc
+\[RightAngleBracket] is entered as Esc->-Esc\
+\>", "Text",
+ CellChangeTimes->{{3.5176734961875*^9, 3.517673524234375*^9}}],
+
+Cell["\[LessLess] is entered as Esc-\\-l-l-Esc", "Text",
+ CellChangeTimes->{{3.517673579390625*^9, 3.51767358978125*^9}, {
+  3.51767362125*^9, 3.51767363284375*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"a", "\[LessLess]", "b"}], "//", "FullForm"}]], "Input",
+ CellChangeTimes->{{3.51767366253125*^9, 3.5176736705*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   RowBox[{"LessLess", "[", 
+    RowBox[{"a", ",", "b"}], "]"}],
+   ShowSpecialCharacters->False,
+   ShowStringCharacters->True,
+   NumberMarks->True],
+  FullForm]], "Output",
+ CellChangeTimes->{3.51767367084375*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"f", "/:", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"f", "[", "a_", "]"}], "\[LessLess]", "g_"}], ")"}], ":=", 
+  RowBox[{"ff", "[", 
+   RowBox[{"a", ",", "g"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"f", "[", "a", "]"}], "\[LessLess]", "g"}]}], "Input",
+ CellChangeTimes->{{3.517673546046875*^9, 3.51767361296875*^9}}],
+
+Cell[BoxData[
+ RowBox[{"ff", "[", 
+  RowBox[{"a", ",", "g"}], "]"}]], "Output",
+ CellChangeTimes->{3.517673613484375*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"a", "\[RightTriangleBar]", "b"}], "//", "FullForm"}]], "Input",
+ CellChangeTimes->{{3.5177648246875*^9, 3.51776483834375*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   RowBox[{"RightTriangleBar", "[", 
+    RowBox[{"a", ",", "b"}], "]"}],
+   ShowSpecialCharacters->False,
+   ShowStringCharacters->True,
+   NumberMarks->True],
+  FullForm]], "Output",
+ CellChangeTimes->{{3.517764831390625*^9, 3.517764838640625*^9}}]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Test of ListToString", "Subsection",
+ CellChangeTimes->{{3.518020678734375*^9, 3.518020681953125*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"MathObject`Private`ListToString", "[", 
+  RowBox[{"{", 
+   RowBox[{"a", ",", "2", ",", "b"}], "}"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"MathObject`Private`ListToString", "[", 
+   RowBox[{"Table", "[", 
+    RowBox[{"i", ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", "100"}], "}"}]}], "]"}], "]"}], "//", 
+  "Short"}]}], "Input",
+ CellChangeTimes->{{3.518020558953125*^9, 3.51802057471875*^9}, {
+  3.5180206353125*^9, 3.5180206551875*^9}}],
+
+Cell[BoxData["\<\"a,2,b\"\>"], "Output",
+ CellChangeTimes->{3.5180205755625*^9, {3.51802063346875*^9, 3.5180206555*^9}}
+  ],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"\<\"1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,\
+2\"\>", "\[Ellipsis]", \
+"\<\"9,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100\"\>"}],
+  
+  Short]], "Output",
+ CellChangeTimes->{3.5180205755625*^9, {3.51802063346875*^9, 3.5180206555*^9}}
+  ]
+}, Open  ]]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Scratch", "Section",
+ CellChangeTimes->{{3.51801469859375*^9, 3.518014704578125*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Old constructor syntax", "Subsection",
+ CellChangeTimes->{{3.51801470721875*^9, 3.518014711421875*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"LEGACY", " ", "--"}], " ", "name", " ", "as", " ", "single", " ",
+     "bracket", " ", "mandatory", " ", "argument"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Class", "/:", 
+    RowBox[{"HoldPattern", "[", 
+     RowBox[{
+      RowBox[{"Class", "[", 
+       RowBox[{"A_:", "None"}], "]"}], "[", "Args___", "]"}], "]"}], ":=", 
+    RowBox[{"ConstructorWrapper", "[", 
+     RowBox[{"Class", ",", "A", ",", "Args"}], "]"}]}], ";"}]}]], "Input",
+ CellChangeTimes->{{3.518014715421875*^9, 3.518014724171875*^9}, 
+   3.518014915515625*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Angle bracket constructor syntax\
+\>", "Subsection",
+ CellChangeTimes->{{3.518014918546875*^9, 3.518014924375*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"ALTERNATE", " ", "--"}], " ", 
+    RowBox[{"AngleBracket", " ", "--"}], " ", "for", " ", "trial"}], " ", 
+   "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Class", "/:", 
+     RowBox[{"HoldPattern", "[", 
+      RowBox[{"Class", 
+       RowBox[{
+        RowBox[{"\[LeftAngleBracket]", 
+         RowBox[{"A_:", "None"}], "\[RightAngleBracket]"}], "[", "Args___", 
+        "]"}]}], "]"}], ":=", 
+     RowBox[{"ConstructorWrapper", "[", 
+      RowBox[{"Class", ",", "A", ",", "Args"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]"}]}]], "Input"]
+}, Open  ]]
+}, Open  ]]
+},
+AutoGeneratedPackage->None,
+WindowToolbars->"RulerBar",
+WindowSize->{1672, 928},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+DockedCells->(FrontEndExecute[{
+   FrontEnd`NotebookApply[
+    FrontEnd`InputNotebook[], #, Placeholder]}]& ),
+PrintingCopies->1,
+PrintingPageRange->{Automatic, Automatic},
+PageHeaders->{{
+   Cell[
+    TextData[{
+      CounterBox["Page"]}], "PageNumber"], Inherited, 
+   Cell[
+    TextData[{
+      ValueBox["FileName"]}], "Header"]}, {
+   Cell[
+    TextData[{
+      ValueBox["FileName"]}], "Header"], Inherited, 
+   Cell[
+    TextData[{
+      CounterBox["Page"]}], "PageNumber"]}},
+PageHeaderLines->{False, Inherited},
+PrintingOptions->{"FirstPageHeader"->False,
+"PrintingMargins"->{{36, 36}, {36, 36}}},
+ShowSelection->True,
+Magnification->1.25,
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (November 7, 2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "Info3517658930-5762677"->{
+  Cell[56314, 1564, 746, 15, 126, "Print",
+   CellTags->"Info3517658930-5762677"],
+  Cell[121527, 3363, 746, 15, 65, "Print",
+   CellTags->"Info3517658930-5762677"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"Info3517658930-5762677", 128525, 3599}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 275, 5, 88, "Section"],
+Cell[CellGroupData[{
+Cell[867, 31, 92, 1, 46, "Subsection"],
+Cell[962, 34, 90, 1, 42, "Text"],
+Cell[1055, 37, 1184, 30, 265, "Input"],
+Cell[2242, 69, 90, 1, 42, "Text"],
+Cell[CellGroupData[{
+Cell[2357, 74, 154, 3, 43, "Input"],
+Cell[2514, 79, 1455, 22, 43, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4006, 106, 239, 5, 43, "Input"],
+Cell[4248, 113, 434, 7, 43, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4719, 125, 212, 5, 43, "Input"],
+Cell[4934, 132, 500, 7, 43, "Output"]
+}, Open  ]],
+Cell[5449, 142, 310, 6, 42, "Text"],
+Cell[CellGroupData[{
+Cell[5784, 152, 489, 14, 43, "Input"],
+Cell[6276, 168, 361, 7, 43, "Output"]
+}, Open  ]],
+Cell[6652, 178, 88, 1, 42, "Text"],
+Cell[CellGroupData[{
+Cell[6765, 183, 471, 9, 100, "Input"],
+Cell[7239, 194, 453, 7, 43, "Output"],
+Cell[7695, 203, 462, 7, 43, "Output"],
+Cell[CellGroupData[{
+Cell[8182, 214, 389, 8, 33, "Print"],
+Cell[8574, 224, 390, 8, 33, "Print"],
+Cell[8967, 234, 431, 8, 33, "Print"],
+Cell[9401, 244, 302, 6, 33, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[9730, 254, 104, 1, 42, "Text"],
+Cell[CellGroupData[{
+Cell[9859, 259, 526, 8, 127, "Input"],
+Cell[10388, 269, 947, 24, 43, "Output"],
+Cell[11338, 295, 953, 24, 43, "Output"],
+Cell[12294, 321, 981, 24, 43, "Output"],
+Cell[13278, 347, 959, 24, 43, "Output"]
+}, Open  ]],
+Cell[14252, 374, 95, 1, 42, "Text"],
+Cell[14350, 377, 199, 4, 43, "Input"],
+Cell[CellGroupData[{
+Cell[14574, 385, 356, 6, 72, "Input"],
+Cell[14933, 393, 878, 23, 43, "Output"],
+Cell[15814, 418, 186, 3, 43, "Output"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[16049, 427, 106, 1, 35, "Subsection"],
+Cell[CellGroupData[{
+Cell[16180, 432, 378, 9, 531, "Input"],
+Cell[16561, 443, 508, 10, 235, "Message"],
+Cell[17072, 455, 1171, 17, 307, "Output"],
+Cell[18246, 474, 516, 10, 235, "Message"],
+Cell[18765, 486, 1172, 17, 307, "Output"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[19986, 509, 102, 1, 35, "Subsection"],
+Cell[CellGroupData[{
+Cell[20113, 514, 154, 3, 246, "Input"],
+Cell[20270, 519, 1429, 21, 246, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21736, 545, 170, 4, 246, "Input"],
+Cell[21909, 551, 402, 9, 188, "Message"],
+Cell[22314, 562, 161, 3, 246, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22512, 570, 219, 5, 246, "Input"],
+Cell[22734, 577, 907, 15, 188, "Message"],
+Cell[23644, 594, 614, 9, 246, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24295, 608, 226, 5, 246, "Input"],
+Cell[24524, 615, 629, 12, 188, "Message"],
+Cell[25156, 629, 307, 5, 246, "Output"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[25512, 640, 101, 1, 35, "Subsection"],
+Cell[CellGroupData[{
+Cell[25638, 645, 150, 3, 383, "Input"],
+Cell[25791, 650, 211, 3, 383, "Output"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[26051, 659, 107, 1, 35, "Subsection"],
+Cell[26161, 662, 97, 1, 382, "Text"],
+Cell[CellGroupData[{
+Cell[26283, 667, 206, 5, 663, "Input"],
+Cell[26492, 674, 307, 5, 383, "Output"],
+Cell[26802, 681, 531, 11, 293, "Message"],
+Cell[27336, 694, 281, 4, 383, "Output"]
+}, Open  ]],
+Cell[27632, 701, 97, 1, 382, "Text"],
+Cell[CellGroupData[{
+Cell[27754, 706, 297, 6, 663, "Input"],
+Cell[28054, 714, 441, 9, 293, "Message"]
+}, Open  ]],
+Cell[28510, 726, 103, 1, 382, "Text"],
+Cell[CellGroupData[{
+Cell[28638, 731, 219, 5, 383, "Input"],
+Cell[28860, 738, 420, 8, 293, "Message"],
+Cell[29283, 748, 163, 2, 383, "Output"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[29495, 756, 95, 1, 35, "Subsection"],
+Cell[29593, 759, 86, 1, 157, "Text"],
+Cell[CellGroupData[{
+Cell[29704, 764, 323, 7, 272, "Input"],
+Cell[30030, 773, 286, 5, 158, "Output"],
+Cell[30319, 780, 148, 3, 121, "Print"]
+}, Open  ]],
+Cell[30482, 786, 88, 1, 157, "Text"],
+Cell[CellGroupData[{
+Cell[30595, 791, 577, 12, 587, "Input"],
+Cell[CellGroupData[{
+Cell[31197, 807, 284, 7, 121, "Print"],
+Cell[31484, 816, 239, 5, 121, "Print"],
+Cell[31726, 823, 196, 5, 121, "Print"]
+}, Open  ]],
+Cell[31937, 831, 956, 25, 158, "Output"]
+}, Open  ]],
+Cell[32908, 859, 86, 1, 157, "Text"],
+Cell[CellGroupData[{
+Cell[33019, 864, 243, 5, 272, "Input"],
+Cell[CellGroupData[{
+Cell[33287, 873, 285, 7, 121, "Print"],
+Cell[33575, 882, 115, 1, 121, "Print"],
+Cell[33693, 885, 145, 3, 121, "Print"]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[33899, 895, 124, 1, 35, "Subsection"],
+Cell[CellGroupData[{
+Cell[34048, 900, 645, 15, 353, "Input"],
+Cell[CellGroupData[{
+Cell[34718, 919, 235, 5, 63, "Print"],
+Cell[34956, 926, 242, 5, 63, "Print"],
+Cell[35201, 933, 282, 5, 63, "Print"],
+Cell[35486, 940, 151, 3, 63, "Print"],
+Cell[35640, 945, 145, 3, 63, "Print"]
+}, Open  ]],
+Cell[35800, 951, 100, 1, 82, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[35937, 957, 248, 5, 82, "Input"],
+Cell[36188, 964, 228, 5, 63, "Print"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[36465, 975, 99, 1, 35, "Subsection"],
+Cell[36567, 978, 330, 7, 383, "Input"],
+Cell[CellGroupData[{
+Cell[36922, 989, 616, 11, 1165, "Input"],
+Cell[37541, 1002, 1066, 29, 828, "Output"],
+Cell[38610, 1033, 1208, 33, 828, "Output"],
+Cell[39821, 1068, 1196, 33, 828, "Output"],
+Cell[41020, 1103, 1267, 35, 828, "Output"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[42336, 1144, 113, 1, 35, "Subsection"],
+Cell[42452, 1147, 156, 4, 82, "Input"],
+Cell[CellGroupData[{
+Cell[42633, 1155, 417, 8, 82, "Input"],
+Cell[43053, 1165, 684, 13, 120, "Message"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[43786, 1184, 115, 1, 35, "Subsection"],
+Cell[43904, 1187, 586, 17, 125, "Input"],
+Cell[44493, 1206, 686, 22, 125, "Input"],
+Cell[CellGroupData[{
+Cell[45204, 1232, 317, 5, 90, "Input"],
+Cell[45524, 1239, 597, 13, 90, "Output"],
+Cell[46124, 1254, 626, 14, 90, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[46787, 1273, 268, 4, 125, "Input"],
+Cell[47058, 1279, 116, 2, 53, "Output"],
+Cell[47177, 1283, 139, 3, 53, "Output"],
+Cell[47319, 1288, 148, 3, 53, "Output"]
+}, Open  ]],
+Cell[47482, 1294, 406, 11, 125, "Input"],
+Cell[CellGroupData[{
+Cell[47913, 1309, 1611, 39, 331, "Input"],
+Cell[49527, 1350, 163, 2, 53, "Output"],
+Cell[49693, 1354, 164, 2, 53, "Output"],
+Cell[49860, 1358, 164, 2, 53, "Output"],
+Cell[50027, 1362, 163, 2, 53, "Output"],
+Cell[50193, 1366, 164, 2, 53, "Output"],
+Cell[50360, 1370, 164, 2, 53, "Output"],
+Cell[50527, 1374, 165, 2, 53, "Output"],
+Cell[50695, 1378, 164, 2, 53, "Output"],
+Cell[50862, 1382, 164, 2, 53, "Output"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[51075, 1390, 175, 4, 35, "Subsection"],
+Cell[CellGroupData[{
+Cell[51275, 1398, 288, 8, 82, "Input"],
+Cell[51566, 1408, 510, 10, 63, "Message"],
+Cell[52079, 1420, 624, 12, 63, "Message"]
+}, Open  ]],
+Cell[52718, 1435, 310, 8, 82, "Input"],
+Cell[53031, 1445, 322, 8, 82, "Input"],
+Cell[CellGroupData[{
+Cell[53378, 1457, 172, 4, 82, "Input"],
+Cell[53553, 1463, 213, 5, 82, "Output"]
+}, Open  ]],
+Cell[53781, 1471, 194, 5, 82, "Input"],
+Cell[53978, 1478, 96, 1, 81, "Text"],
+Cell[54077, 1481, 318, 9, 82, "Input"],
+Cell[CellGroupData[{
+Cell[54420, 1494, 200, 5, 82, "Input"],
+Cell[54623, 1501, 121, 3, 82, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[54781, 1509, 237, 6, 82, "Input"],
+Cell[55021, 1517, 346, 11, 82, "Output"]
+}, Open  ]],
+Cell[55382, 1531, 369, 10, 82, "Input"],
+Cell[CellGroupData[{
+Cell[55776, 1545, 223, 5, 82, "Input"],
+Cell[56002, 1552, 151, 3, 82, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[56190, 1560, 121, 2, 82, "Input"],
+Cell[56314, 1564, 746, 15, 126, "Print",
+ CellTags->"Info3517658930-5762677"]
+}, Open  ]],
+Cell[57075, 1582, 570, 17, 140, "Input"],
+Cell[57648, 1601, 176, 4, 132, "Text"],
+Cell[57827, 1607, 165, 2, 81, "Text"],
+Cell[CellGroupData[{
+Cell[58017, 1613, 150, 3, 82, "Input"],
+Cell[58170, 1618, 251, 9, 82, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[58458, 1632, 358, 9, 140, "Input"],
+Cell[58819, 1643, 121, 3, 82, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[58977, 1651, 161, 3, 82, "Input"],
+Cell[59141, 1656, 284, 9, 82, "Output"]
+}, Open  ]]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[59486, 1672, 225, 3, 88, "Section"],
+Cell[59714, 1677, 318, 5, 80, "Input"],
+Cell[CellGroupData[{
+Cell[60057, 1686, 92, 1, 46, "Subsection"],
+Cell[60152, 1689, 90, 1, 34, "Text"],
+Cell[60245, 1692, 1184, 30, 212, "Input"],
+Cell[61432, 1724, 90, 1, 34, "Text"],
+Cell[CellGroupData[{
+Cell[61547, 1729, 239, 5, 35, "Input"],
+Cell[61789, 1736, 1543, 23, 43, "Output"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[63369, 1764, 239, 5, 27, "Input"],
+Cell[63611, 1771, 479, 8, 43, "Output"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[64127, 1784, 212, 5, 27, "Input"],
+Cell[64342, 1791, 547, 8, 43, "Output"]
+}, Closed]],
+Cell[64904, 1802, 310, 6, 29, "Text"],
+Cell[CellGroupData[{
+Cell[65239, 1812, 489, 14, 35, "Input"],
+Cell[65731, 1828, 378, 7, 43, "Output"]
+}, Closed]],
+Cell[66124, 1838, 88, 1, 29, "Text"],
+Cell[CellGroupData[{
+Cell[66237, 1843, 471, 9, 80, "Input"],
+Cell[66711, 1854, 474, 7, 43, "Output"],
+Cell[67188, 1863, 479, 7, 43, "Output"],
+Cell[CellGroupData[{
+Cell[67692, 1874, 411, 8, 33, "Print"],
+Cell[68106, 1884, 503, 10, 33, "Print"],
+Cell[68612, 1896, 460, 9, 33, "Print"],
+Cell[69075, 1907, 700, 18, 33, "Print"]
+}, Closed]]
+}, Closed]],
+Cell[69802, 1929, 104, 1, 29, "Text"],
+Cell[CellGroupData[{
+Cell[69931, 1934, 526, 8, 102, "Input"],
+Cell[70460, 1944, 960, 24, 43, "Output"],
+Cell[71423, 1970, 965, 24, 43, "Output"],
+Cell[72391, 1996, 993, 24, 43, "Output"],
+Cell[73387, 2022, 975, 24, 43, "Output"]
+}, Closed]],
+Cell[74377, 2049, 95, 1, 29, "Text"],
+Cell[74475, 2052, 199, 4, 35, "Input"],
+Cell[CellGroupData[{
+Cell[74699, 2060, 356, 6, 58, "Input"],
+Cell[75058, 2068, 891, 23, 43, "Output"],
+Cell[75952, 2093, 209, 3, 43, "Output"]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[76210, 2102, 106, 1, 35, "Subsection"],
+Cell[CellGroupData[{
+Cell[76341, 2107, 551, 14, 127, "Input"],
+Cell[76895, 2123, 901, 17, 33, "Message"],
+Cell[77799, 2142, 1463, 21, 43, "Output"],
+Cell[79265, 2165, 888, 16, 33, "Message"],
+Cell[80156, 2183, 1463, 21, 43, "Output"],
+Cell[81622, 2206, 905, 17, 33, "Message"],
+Cell[82530, 2225, 1462, 21, 43, "Output"]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[84041, 2252, 102, 1, 35, "Subsection"],
+Cell[CellGroupData[{
+Cell[84168, 2257, 245, 5, 43, "Input"],
+Cell[84416, 2264, 1455, 22, 43, "Output"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[85908, 2291, 170, 4, 43, "Input"],
+Cell[86081, 2297, 475, 10, 33, "Message"],
+Cell[86559, 2309, 183, 3, 43, "Output"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[86779, 2317, 219, 5, 43, "Input"],
+Cell[87001, 2324, 1016, 17, 33, "Message"],
+Cell[88020, 2343, 636, 9, 43, "Output"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[88693, 2357, 226, 5, 43, "Input"],
+Cell[88922, 2364, 679, 13, 33, "Message"],
+Cell[89604, 2379, 328, 5, 43, "Output"]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[89981, 2390, 101, 1, 35, "Subsection"],
+Cell[CellGroupData[{
+Cell[90107, 2395, 153, 3, 43, "Input"],
+Cell[90263, 2400, 217, 4, 43, "Output"]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[90529, 2410, 107, 1, 35, "Subsection"],
+Cell[90639, 2413, 97, 1, 42, "Text"],
+Cell[CellGroupData[{
+Cell[90761, 2418, 339, 8, 72, "Input"],
+Cell[91103, 2428, 400, 6, 43, "Output"],
+Cell[91506, 2436, 716, 15, 33, "Message"],
+Cell[92225, 2453, 374, 5, 43, "Output"]
+}, Closed]],
+Cell[92614, 2461, 168, 4, 42, "Text"],
+Cell[92785, 2467, 297, 6, 72, "Input"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[93119, 2478, 95, 1, 35, "Subsection"],
+Cell[93217, 2481, 86, 1, 42, "Text"],
+Cell[CellGroupData[{
+Cell[93328, 2486, 407, 7, 72, "Input"],
+Cell[93738, 2495, 311, 6, 43, "Output"],
+Cell[94052, 2503, 173, 4, 33, "Print"]
+}, Closed]],
+Cell[94240, 2510, 88, 1, 42, "Text"],
+Cell[CellGroupData[{
+Cell[94353, 2515, 671, 14, 155, "Input"],
+Cell[CellGroupData[{
+Cell[95049, 2533, 289, 7, 33, "Print"],
+Cell[95341, 2542, 382, 9, 33, "Print"],
+Cell[95726, 2553, 336, 8, 33, "Print"],
+Cell[96065, 2563, 580, 17, 33, "Print"],
+Cell[96648, 2582, 254, 7, 33, "Print"]
+}, Closed]]
+}, Closed]],
+Cell[96929, 2593, 86, 1, 42, "Text"],
+Cell[CellGroupData[{
+Cell[97040, 2598, 243, 5, 72, "Input"],
+Cell[CellGroupData[{
+Cell[97308, 2607, 263, 6, 33, "Print"],
+Cell[97574, 2615, 140, 2, 33, "Print"],
+Cell[97717, 2619, 169, 4, 33, "Print"]
+}, Closed]]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[97947, 2630, 124, 1, 35, "Subsection"],
+Cell[CellGroupData[{
+Cell[98096, 2635, 733, 16, 182, "Input"],
+Cell[CellGroupData[{
+Cell[98854, 2655, 258, 6, 33, "Print"],
+Cell[99115, 2663, 354, 8, 33, "Print"],
+Cell[99472, 2673, 309, 7, 33, "Print"],
+Cell[99784, 2682, 552, 16, 33, "Print"],
+Cell[100339, 2700, 225, 6, 33, "Print"]
+}, Closed]],
+Cell[100579, 2709, 125, 2, 43, "Output"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[100741, 2716, 248, 5, 43, "Input"],
+Cell[100992, 2723, 288, 6, 33, "Print"]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[101329, 2735, 99, 1, 35, "Subsection"],
+Cell[101431, 2738, 330, 7, 35, "Input"],
+Cell[CellGroupData[{
+Cell[101786, 2749, 616, 11, 102, "Input"],
+Cell[102405, 2762, 1088, 30, 90, "Output"],
+Cell[103496, 2794, 1233, 34, 90, "Output"],
+Cell[104732, 2830, 1222, 34, 90, "Output"],
+Cell[105957, 2866, 1294, 36, 90, "Output"]
+}, Closed]],
+Cell[107266, 2905, 309, 7, 72, "Input"],
+Cell[CellGroupData[{
+Cell[107600, 2916, 343, 8, 58, "Input"],
+Cell[107946, 2926, 170, 3, 35, "Output"],
+Cell[108119, 2931, 168, 3, 35, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[108324, 2939, 328, 7, 58, "Input"],
+Cell[CellGroupData[{
+Cell[108677, 2950, 263, 6, 27, "Print"],
+Cell[108943, 2958, 359, 8, 27, "Print"],
+Cell[109305, 2968, 311, 7, 27, "Print"],
+Cell[109619, 2977, 554, 16, 27, "Print"]
+}, Open  ]]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[110234, 3000, 115, 1, 35, "Subsection"],
+Cell[110352, 3003, 586, 17, 100, "Input"],
+Cell[110941, 3022, 686, 22, 100, "Input"],
+Cell[CellGroupData[{
+Cell[111652, 3048, 317, 5, 72, "Input"],
+Cell[111972, 3055, 596, 15, 43, "Output"],
+Cell[112571, 3072, 595, 15, 43, "Output"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[113203, 3092, 268, 4, 100, "Input"],
+Cell[113474, 3098, 142, 3, 43, "Output"],
+Cell[113619, 3103, 163, 4, 43, "Output"],
+Cell[113785, 3109, 173, 4, 43, "Output"]
+}, Closed]],
+Cell[113973, 3116, 581, 15, 100, "Input"],
+Cell[CellGroupData[{
+Cell[114579, 3135, 747, 20, 43, "Input"],
+Cell[115329, 3157, 775, 20, 85, "Output"]
+}, Closed]]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[116165, 3184, 98, 1, 88, "Section"],
+Cell[CellGroupData[{
+Cell[116288, 3189, 175, 4, 46, "Subsection"],
+Cell[CellGroupData[{
+Cell[116488, 3197, 288, 8, 43, "Input"],
+Cell[116779, 3207, 510, 10, 33, "Message"],
+Cell[117292, 3219, 624, 12, 33, "Message"]
+}, Open  ]],
+Cell[117931, 3234, 310, 8, 43, "Input"],
+Cell[118244, 3244, 322, 8, 43, "Input"],
+Cell[CellGroupData[{
+Cell[118591, 3256, 172, 4, 43, "Input"],
+Cell[118766, 3262, 213, 5, 43, "Output"]
+}, Open  ]],
+Cell[118994, 3270, 194, 5, 43, "Input"],
+Cell[119191, 3277, 96, 1, 42, "Text"],
+Cell[119290, 3280, 318, 9, 43, "Input"],
+Cell[CellGroupData[{
+Cell[119633, 3293, 200, 5, 43, "Input"],
+Cell[119836, 3300, 121, 3, 43, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[119994, 3308, 237, 6, 43, "Input"],
+Cell[120234, 3316, 346, 11, 43, "Output"]
+}, Open  ]],
+Cell[120595, 3330, 369, 10, 43, "Input"],
+Cell[CellGroupData[{
+Cell[120989, 3344, 223, 5, 43, "Input"],
+Cell[121215, 3351, 151, 3, 43, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[121403, 3359, 121, 2, 43, "Input"],
+Cell[121527, 3363, 746, 15, 65, "Print",
+ CellTags->"Info3517658930-5762677"]
+}, Open  ]],
+Cell[122288, 3381, 570, 17, 72, "Input"],
+Cell[122861, 3400, 176, 4, 68, "Text"],
+Cell[123040, 3406, 165, 2, 42, "Text"],
+Cell[CellGroupData[{
+Cell[123230, 3412, 150, 3, 43, "Input"],
+Cell[123383, 3417, 251, 9, 43, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[123671, 3431, 358, 9, 72, "Input"],
+Cell[124032, 3442, 121, 3, 43, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[124190, 3450, 161, 3, 43, "Input"],
+Cell[124354, 3455, 284, 9, 43, "Output"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[124687, 3470, 108, 1, 35, "Subsection"],
+Cell[CellGroupData[{
+Cell[124820, 3475, 492, 12, 72, "Input"],
+Cell[125315, 3489, 123, 2, 43, "Output"],
+Cell[125441, 3493, 313, 8, 43, "Output"]
+}, Open  ]]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[125815, 3508, 91, 1, 88, "Section"],
+Cell[CellGroupData[{
+Cell[125931, 3513, 109, 1, 46, "Subsection"],
+Cell[126043, 3516, 626, 16, 58, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[126706, 3537, 125, 3, 46, "Subsection"],
+Cell[126834, 3542, 653, 18, 102, "Input"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
